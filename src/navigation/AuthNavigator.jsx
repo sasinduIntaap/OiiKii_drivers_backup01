@@ -3,7 +3,7 @@ import WelcomeScreen from '../screens/WelcomeScreen';
 import LoginScreen from '../screens/LoginScreen';
 import Register from '../screens/Register';
 import OiiKii_Logo from '../components/OiiKii_Logo';
-import Logo from '../assets/OiiKii_Logo.svg';
+
 
 const Stack = createStackNavigator();
 

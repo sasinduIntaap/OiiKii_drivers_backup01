@@ -1,8 +1,8 @@
 import React from 'react';
 import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
-import Logo from '../assets/images/AppLogo.svg';
+import Logo from '../assets/svg_icons/AppLogo.svg';
 import { LinearGradient } from 'expo-linear-gradient';
-import BuildingWithDriver from '../assets/images/BuildingWithDriver.svg';
+import BuildingWithDriver from '../assets/svg_icons/BuildingWithDriver.svg';
 import Routes from '../constants/Routes';
 import {useNavigation} from '@react-navigation/native';
 

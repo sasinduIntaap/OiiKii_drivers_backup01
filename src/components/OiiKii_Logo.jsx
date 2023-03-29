@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import Logo from '../assets/OiiKii_Logo.svg';
+import Logo from '../assets/svg_icons/OiiKii_Logo.svg';
 
 const OiiKii_Logo = (props) => {
   return (

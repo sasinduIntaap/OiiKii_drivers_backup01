@@ -5,13 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import PhoneInput from 'react-native-phone-number-input';
 import TandC_comp from '../components/TandC_comp';
 import Checkbox from 'expo-checkbox';
-import Buildings from '../assets/building.svg';
-import PhoneIcon from '../assets/phoneIcon.svg';
-import MailIcon from '../assets/mailIcon.svg';
-import AppleLogo from '../assets/images/Apple_logo_black1.svg';
-import GoogleLogo from '../assets/images/Google__G__Logo 1.svg';
+import Buildings from '../assets/svg_icons/building.svg';
 import {useNavigation} from '@react-navigation/native';
 import Routes from '../constants/Routes';
+import Social_Media_Login from '../components/Social_Media_Login';
 
 
 
@@ -84,16 +81,8 @@ const Register = () => {
           </TouchableOpacity>
       </LinearGradient>
       <Text style={styles.or}>Or</Text>
-      <TouchableOpacity style={styles.googleButton}>
-      
-        <GoogleLogo/>
-        <Text style={styles.googleButtonText}>Continue with Google</Text>
-      </TouchableOpacity>
-      <TouchableOpacity style={styles.appleButton}>
-        <AppleLogo />
-        
-        <Text style={styles.appleButtonText}>Continue with Apple</Text>
-      </TouchableOpacity>
+      <Social_Media_Login text='Continue with Google' mediaType='google'/>
+      <Social_Media_Login text='Continue with Apple' mediaType='apple'/>
       
       </View> 
       {/* box shadow, elevated container ends */}

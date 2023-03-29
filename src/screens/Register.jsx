@@ -5,11 +5,10 @@ import { LinearGradient } from 'expo-linear-gradient';
 import PhoneInput from 'react-native-phone-number-input';
 import TandC_comp from '../components/TandC_comp';
 import Checkbox from 'expo-checkbox';
-import Buildings from '../assets/building.svg';
-import PhoneIcon from '../assets/phoneIcon.svg';
-import MailIcon from '../assets/mailIcon.svg';
-import Google_Login_Button from '../components/Google_Login_Button';
-import Apple_Login_Button from '../components/Apple_Login_Button';
+import Buildings from '../assets/svg_icons/building.svg';
+import PhoneIcon from '../assets/svg_icons/phoneIcon.svg';
+import MailIcon from '../assets/svg_icons/mailIcon.svg';
+import Social_Media_Login from '../components/Social_Media_Login';
 
 
 
@@ -117,8 +116,8 @@ const Register = () => {
 
       
       <View style={{width:'100%'}}>
-      <View style={{margin:10}}><Google_Login_Button text='Sign up with Google' onPress={()=> console.log('apple pressed')}/></View>
-      <View style={{margin:10}}><Apple_Login_Button text='Sign up with Apple'/></View>
+      <View style={{margin:10}}><Social_Media_Login text='Sign up with Google' onPress={()=> console.log('google pressed')} mediaType='google'/></View>
+      <View style={{margin:10}}><Social_Media_Login text='Sign up with Apple' onPress={()=> console.log('apple pressed')} mediaType='apple'/></View>
       </View>
       
       
@@ -132,7 +131,7 @@ const Register = () => {
       </View>
       {/* the buildings image */}
       <View>
-      <Image source={require('../assets/images/png/BuildingOnly.png')} style={{width:'100%', height:200}} />
+      <Image source={require('../assets/images/BuildingOnly.png')} style={{width:'100%', height:200}} />
         
       
         {/* <Buildings/> */}
