@@ -5,7 +5,7 @@ import GoogleLogo from '../assets/svg_icons/google_logo_colorful.svg';
 
 const Social_Media_Login = ({text,onPress,mediaType}) => {
   return (
-    <TouchableOpacity style={[styles.googleButton]} onPress={onPress}>
+    <TouchableOpacity style={styles.googleButton} onPress={onPress}>
       
         {mediaType == 'google' ? <GoogleLogo/> :<View></View> || mediaType == 'apple' ? <AppleLogo /> : <View></View>}
         <Text style={styles.googleButtonText}>{text}</Text>
