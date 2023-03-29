@@ -1,0 +1,15 @@
+<svg width="105" height="32" viewBox="0 0 105 32" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M62.8878 25.999H59.6293C58.7294 25.999 58 25.2696 58 24.3698V24.3698" stroke="black"/>
+<rect x="62.3278" y="1" width="41.5462" height="25.1008" fill="white" stroke="black" stroke-linejoin="round"/>
+<circle cx="70.1685" cy="26.4063" r="4.38779" fill="white" stroke="black"/>
+<circle cx="95.7785" cy="26.4063" r="4.38779" fill="white" stroke="black"/>
+<path d="M1 16.5561V26.4308H58V1H16.2668C15.5093 1 14.8168 1.428 14.478 2.10557L9.76923 11.5231L4.21554 12.6338C2.34584 13.0078 1 14.6494 1 16.5561Z" fill="white" stroke="black" stroke-linejoin="round"/>
+<path d="M20.2923 15.0309L18.5385 15.0309" stroke="black" stroke-linecap="round" stroke-linejoin="round"/>
+<path d="M22.0461 1V11.5231" stroke="black" stroke-linejoin="round"/>
+<path d="M30.8154 1V11.5231" stroke="black" stroke-linejoin="round"/>
+<path d="M39.5846 1V11.5231" stroke="black" stroke-linejoin="round"/>
+<path d="M48.3539 1V11.5231" stroke="black" stroke-linejoin="round"/>
+<path d="M9.76917 11.5231H57.9999" stroke="black" stroke-linejoin="round"/>
+<circle cx="9.76923" cy="25.5538" r="4.76154" fill="white" stroke="black"/>
+<circle cx="48.3538" cy="25.5538" r="4.76154" fill="white" stroke="black"/>
+</svg>
