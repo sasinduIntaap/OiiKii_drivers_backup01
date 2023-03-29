@@ -26,8 +26,8 @@ const WelcomeScreen = (props) => {
         <View style={styles.devider}></View>
       </View>
       <Text style={styles.loginText}>
-        <Text style={{color: 'rgba(239, 86, 132, 1)'}} onPress={() => navigation.navigate('Login')}>Log In</Text>
-        <Text style={{color: 'rgba(129, 129, 129, 1)'}}> to the existing account</Text>
+        <Text style={styles.loginText} onPress={() => navigation.navigate('Login')}>Log In</Text>
+        <Text style={styles.normalText}> to the existing account</Text>
       </Text>
     </View>
   );
@@ -74,7 +74,9 @@ const styles = StyleSheet.create({
     lineHeight: 19,
   },
   devider_container:{flexDirection:'row', alignItems:'center',bottom:-110},
-  devider:{borderColor:'black', width:115, borderWidth:0.5}
+  devider:{borderColor:'black', width:115, borderWidth:0.5},
+  loginText:{color: 'rgba(239, 86, 132, 1)'},
+  normalText:{color: 'rgba(129, 129, 129, 1)'}
 });
 
 export default WelcomeScreen;
