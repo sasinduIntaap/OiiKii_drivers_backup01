@@ -1,13 +1,8 @@
 import React, { useState,useRef } from 'react';
 import { StyleSheet, View, Text, TextInput, TouchableOpacity,Alert } from 'react-native';
-import OiiKii_Logo from '../components/OiiKii_Logo';
 import { LinearGradient } from 'expo-linear-gradient';
-import PhoneInput from 'react-native-phone-number-input';
-import TandC_comp from '../components/TandC_comp';
-import Checkbox from 'expo-checkbox';
 import Buildings from '../assets/svg_icons/building.svg';
 import {useNavigation} from '@react-navigation/native';
-import Routes from '../constants/Routes';
 import Social_Media_Login from '../components/Social_Media_Login';
 
 
@@ -37,24 +32,21 @@ const Register = () => {
   };
 
   
-    //////////////////////////////////////////////////////////////sign in\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
+    
     return (
       <>
-      {/* <View style={styles.logo}> */}
-      {/* this is the OiiKii logo */}
-      {/* <OiiKii_Logo /> */}
       
-      {/* </View> */}
       {/* main container */}
       <View style={styles.container}>
-      {/* box shadow, elevated container begins */}
+      {/*elevated container*/}
       <View style={styles.boxShadow}>
+        {/* title container */}
       <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
-      <Text style={styles.title}>Welcome Back!</Text>
+      <Text style={styles.title_text}>Welcome Back!</Text>
       </View>
-        
-        <View style={{width:'100%', alignItems:'center'}}>
-        <View style={{width:'100%',alignItems:'flex-start', paddingLeft:'12%'}}><Text style={{fontWeight:'bold'}}>Email</Text></View>
+        {/* email text input container */}
+        <View style={styles.texhtInpu_container}>
+        <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Email</Text></View>
         <TextInput
           style={styles.input}
           placeholder="Email"
@@ -62,8 +54,9 @@ const Register = () => {
           value={email}
         />
         </View>
-        <View style={{width:'100%', alignItems:'center'}}>
-        <View style={{width:'100%',alignItems:'flex-start', paddingLeft:'12%'}}><Text style={{fontWeight:'bold'}}>Password</Text></View>
+        {/* password text input container */}
+        <View style={styles.texhtInpu_container}>
+        <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Password</Text></View>
         <TextInput
           style={styles.input}
           placeholder="Password"
@@ -74,20 +67,22 @@ const Register = () => {
         </View>
         
         
-      
+      {/* sign in button */}
         <LinearGradient style={styles.signup_button} colors={['#F66F6F', '#DB0DC1']}>
-          <TouchableOpacity style={{width:'100%', alignItems:'center'}} onPress={handleSignIn}>
+          <TouchableOpacity style={styles.login_btn_touchableOpacity} onPress={handleSignIn}>
           <Text style={styles.buttonText}>Sign In</Text>
           </TouchableOpacity>
       </LinearGradient>
       <Text style={styles.or}>Or</Text>
-      <Social_Media_Login text='Continue with Google' mediaType='google'/>
-      <Social_Media_Login text='Continue with Apple' mediaType='apple'/>
+      {/* socialmedia login container */}
+      <View style={styles.social_login_container}>
+      <Social_Media_Login text='Continue with Google' mediaType='google' onPress={()=> console.log('google pressed')}/>
+      <Social_Media_Login text='Continue with Apple' mediaType='apple' onPress={()=> console.log('google pressed')}/>
+      </View>
       
       </View> 
-      {/* box shadow, elevated container ends */}
-      <View>
       {/* the buildings image */}
+      <View>
       <Buildings />
       </View>
         
@@ -111,12 +106,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
-        
-        
-        
-
-        
-      },
+        },
       boxShadow: {
         elevation: 20,
         borderRadius: 11,
@@ -124,12 +114,12 @@ const styles = StyleSheet.create({
         width:'80%',
         marginTop: '15%',
         alignItems: 'center',
-        // justifyContent: 'center',
         backgroundColor: 'white',
 
       },
+      title_container:{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'},
 
-      title: {
+      title_text: {
         fontSize: 20,
         fontWeight: 'bold',
         
@@ -174,7 +164,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding:0,
         margin:0,
-        // justifyContent:'space-evenly'
+        
 
       },
       checkBox:{
@@ -196,6 +186,7 @@ const styles = StyleSheet.create({
         shadowRadius: 20,
         elevation: 2,
       },
+      login_btn_touchableOpacity:{width:'100%', alignItems:'center'},
       gradient: {
         flex: 10,
         justifyContent: 'center',
@@ -212,42 +203,19 @@ const styles = StyleSheet.create({
         marginTop: 10,
         marginBottom: 20,
         },
-        googleButton: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            borderWidth: 1,
-            backgroundColor: '#ffffff',
-            borderColor:'#9D9D9D',
-            width: '80%',
-            height: 50,
-            borderRadius: 10,
-            justifyContent: 'center',
-            alignItems: 'center',
-            marginBottom: 10,
-            },
-            googleButtonText: {
-            color: '#000000',
-            fontSize: 16,
-            fontWeight: 'bold',
-            marginLeft: 10,
-            },
-            appleButton: {
-            flexDirection: 'row',
-            alignItems: 'center',
-            borderWidth: 1,
-            backgroundColor: '#ffffff',
-            borderColor:'#9D9D9D',
-            width: '80%',
-            height: 50,
-            borderRadius: 10,
-            justifyContent: 'center',
-            },
-            appleButtonText: {
-            color: '#000000',
-            fontSize: 16,
-            fontWeight: 'bold',
-            marginLeft: 10,
-            }
+        social_login_container:{
+          width:'100%', 
+          height:120, 
+          justifyContent:'space-between',
+          paddingLeft:10,
+          paddingRight:10
+        },
+        texhtInpu_container:{width:'100%', alignItems:'center'},
+        textInput_label_container:{width:'100%',alignItems:'flex-start', paddingLeft:'12%'},
+        textInput_labelText:{fontWeight:'bold'}
+
+        
+        
       
       
       
