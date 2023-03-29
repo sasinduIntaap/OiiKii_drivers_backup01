@@ -5,6 +5,8 @@ import { LinearGradient } from 'expo-linear-gradient';
 import BuildingWithDriver from '../assets/svg_icons/BuildingWithDriver.svg';
 import Routes from '../constants/Routes';
 import {useNavigation} from '@react-navigation/native';
+import Primary_button from '../components/Primary_button';
+
 
 
 const WelcomeScreen = (props) => {
@@ -17,19 +19,11 @@ const WelcomeScreen = (props) => {
         height={52}
       />
       <BuildingWithDriver/>
-      <TouchableOpacity style={styles.loginButton} onPress={() => navigation.navigate('Register')}>
-        <LinearGradient
-          colors={['rgba(246, 111, 111, 1)', 'rgba(219, 13, 193, 1)']}
-          start={{ x: 0, y: 0 }}
-          end={{ x: 1, y: 0 }}
-          style={styles.gradient}
-        />
-        <Text style={styles.loginButtonText}>Sign Up</Text>
-      </TouchableOpacity>
-      <View style={{flexDirection:'row', alignItems:'center'}} bottom={-110}>
-        <View style={{borderColor:'black', width:115, borderWidth:0.5}}></View>
+      <Primary_button text='Sign Up'/>
+      <View style={styles.devider_container}>
+        <View style={styles.devider}></View>
         <Text style={{paddingLeft: 10, paddingRight:10}}>Or</Text>
-        <View style={{borderColor:'black', width:115, borderWidth:0.5}}></View>
+        <View style={styles.devider}></View>
       </View>
       <Text style={styles.loginText}>
         <Text style={{color: 'rgba(239, 86, 132, 1)'}} onPress={() => navigation.navigate('Login')}>Log In</Text>
@@ -79,6 +73,8 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 19,
   },
+  devider_container:{flexDirection:'row', alignItems:'center',bottom:-110},
+  devider:{borderColor:'black', width:115, borderWidth:0.5}
 });
 
 export default WelcomeScreen;

@@ -4,6 +4,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 import Buildings from '../assets/svg_icons/building.svg';
 import {useNavigation} from '@react-navigation/native';
 import Social_Media_Login from '../components/Social_Media_Login';
+import Primary_button from '../components/Primary_button';
 
 
 
@@ -68,11 +69,7 @@ const Register = () => {
         
         
       {/* sign in button */}
-        <LinearGradient style={styles.signup_button} colors={['#F66F6F', '#DB0DC1']}>
-          <TouchableOpacity style={styles.login_btn_touchableOpacity} onPress={handleSignIn}>
-          <Text style={styles.buttonText}>Sign In</Text>
-          </TouchableOpacity>
-      </LinearGradient>
+      <Primary_button text='Sign In'/>
       <Text style={styles.or}>Or</Text>
       {/* socialmedia login container */}
       <View style={styles.social_login_container}>
