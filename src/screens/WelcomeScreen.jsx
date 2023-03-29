@@ -16,17 +16,23 @@ const WelcomeScreen = (props) => {
         width={151.72}
         height={52}
       />
+      <View style={styles.banner_container}>
       <BuildingWithDriver/>
+      </View>
+      <View style={styles.bottomContent_container}>
       <Primary_button text='Sign Up'/>
       <View style={styles.devider_container}>
         <View style={styles.devider}></View>
         <Text style={{paddingLeft: 10, paddingRight:10}}>Or</Text>
         <View style={styles.devider}></View>
       </View>
-      <Text style={styles.loginText}>
+      
+        <View style={styles.loginText_container}>
         <Text style={styles.loginText} onPress={() => navigation.navigate('Login')}>Log In</Text>
         <Text style={styles.normalText}> to the existing account</Text>
-      </Text>
+        </View>
+      </View>
+      
     </View>
   );
 };
@@ -71,10 +77,28 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 19,
   },
-  devider_container:{flexDirection:'row', alignItems:'center',bottom:-110},
-  devider:{borderColor:'black', width:115, borderWidth:0.5},
-  loginText:{color: 'rgba(239, 86, 132, 1)'},
-  normalText:{color: 'rgba(129, 129, 129, 1)'}
+  devider_container:{
+    flexDirection:'row',
+     alignItems:'center'
+    },
+  devider:{
+    borderColor:'black', width:115, borderWidth:0.5
+  },
+  loginText:{
+    color: 'rgba(239, 86, 132, 1)'
+  },
+  normalText:{
+    color: 'rgba(129, 129, 129, 1)'
+  },
+  loginText_container:{
+    flexDirection:'row'
+  },
+  bottomContent_container:{
+    width:'100%', alignItems:'center', justifyContent:'space-evenly', top:60,height:200
+  },
+  banner_container:{
+    top:20
+  }
 });
 
 export default WelcomeScreen;
