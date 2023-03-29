@@ -1,5 +1,5 @@
-import React, { useState,useRef } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity,Alert } from 'react-native';
+import React, { useState,useRef,useEffect } from 'react';
+import { StyleSheet, View, Text, TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image } from 'react-native';
 import OiiKii_Logo from '../components/OiiKii_Logo';
 import { LinearGradient } from 'expo-linear-gradient';
 import PhoneInput from 'react-native-phone-number-input';
@@ -8,12 +8,19 @@ import Checkbox from 'expo-checkbox';
 import Buildings from '../assets/building.svg';
 import PhoneIcon from '../assets/phoneIcon.svg';
 import MailIcon from '../assets/mailIcon.svg';
+import Google_Login_Button from '../components/Google_Login_Button';
+import Apple_Login_Button from '../components/Apple_Login_Button';
 
 
 
-
+const {height, width} = Dimensions.get('window');
+const bk_image = {uri :'http://www.w3.org/2000/svg'};
 
 const Register = () => {
+  useEffect(()=>{
+    console.log('height ' + height);
+    console.log('width ' + width);
+  });
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -37,20 +44,18 @@ const Register = () => {
     //////////////////////////////////////////////////////////////sign up stage 1\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\
     return (
       <>
-      {/* <View style={styles.logo}> */}
-      {/* this is the OiiKii logo */}
-      {/* <OiiKii_Logo /> */}
       
-      {/* </View> */}
+      
+      
       {/* main container */}
       <View style={styles.container}>
       {/* box shadow, elevated container begins */}
       <View style={styles.boxShadow}>
-      <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
+      <View style={{justifyContent:'flex-start', width:'100%', marginLeft: '5%', flexDirection:'row', marginTop:5, marginBottom:20 }}>
       <Text style={styles.title}>Create New Account</Text>
       </View>
         <View style={{width:'100%', alignItems:'center'}}>
-        <View style={{width:'100%',alignItems:'flex-start', paddingLeft:'12%', paddingBottom:'2%'}}><Text style={{fontWeight:'bold'}}>Phone number</Text></View>
+        <View style={{width:'100%',alignItems:'flex-start', paddingLeft:'12%'}}><Text style={{fontWeight:'bold'}}>Phone number</Text></View>
         <PhoneInput
           ref={phoneInput}
           defaultValue={phoneNumber}
@@ -109,18 +114,31 @@ const Register = () => {
           <Text style={styles.buttonText}>Sign Up</Text>
           </TouchableOpacity>
       </LinearGradient>
+
+      
+      <View style={{width:'100%'}}>
+      <View style={{margin:10}}><Google_Login_Button text='Sign up with Google' onPress={()=> console.log('apple pressed')}/></View>
+      <View style={{margin:10}}><Apple_Login_Button text='Sign up with Apple'/></View>
+      </View>
+      
       
       </View> 
       {/* box shadow, elevated container ends */}
-      <View>
+      
+        
+        
+        
+        
+      </View>
       {/* the buildings image */}
-      <Buildings />
+      <View>
+      <Image source={require('../assets/images/png/BuildingOnly.png')} style={{width:'100%', height:200}} />
+        
+      
+        {/* <Buildings/> */}
+      
       </View>
-        
-        
-        
-        
-      </View>
+      
       
       </>
     );
@@ -169,7 +187,8 @@ const Register = () => {
       {/* /////////////////////////////////////////////////////////////Elevated container\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
 
       {/* /////////////////////////////////////////////////////////////Buildings image\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
-      <View>
+      <View style={{height:'100%', marginBottom:'20%'}}>
+      {/* the buildings image */}
       <Buildings />
       </View>
       {/* /////////////////////////////////////////////////////////////Buildings image\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\ */}
@@ -246,7 +265,7 @@ const Register = () => {
       
       </View> 
       {/* box shadow, elevated container ends */}
-      <View>
+      <View style={{height:'100%', marginBottom:'20%'}}>
       {/* the buildings image */}
       <Buildings />
       </View>
@@ -255,6 +274,7 @@ const Register = () => {
         
         
       </View>
+      
       
       </>
     );
@@ -267,10 +287,11 @@ export default Register
 const styles = StyleSheet.create({
 
     container: {
-        flex: 1,
+        flex: 6,
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: 'white',
+        height:'100%'
         
         
         
@@ -278,14 +299,18 @@ const styles = StyleSheet.create({
         
       },
       boxShadow: {
+        padding:20,
+        // marginBottom:10,
+        // flex:6,
         elevation: 20,
         borderRadius: 11,
-        height: 550,
+        maxHeight: 700,
         width:'80%',
-        marginTop: '15%',
+        // marginTop: '5%',
         alignItems: 'center',
-        // justifyContent: 'center',
+        justifyContent: 'center',
         backgroundColor: 'white',
+        
 
       },
 
@@ -309,7 +334,8 @@ const styles = StyleSheet.create({
          height:50,
           justifyContent:'center',
            borderRadius:12,
-           marginTop: '5%'
+           marginTop: '5%',
+           
       },
       buttonText: {
         color: '#fff',
@@ -334,6 +360,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         padding:0,
         margin:0,
+        
         // justifyContent:'space-evenly'
 
       },
