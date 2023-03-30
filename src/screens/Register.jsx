@@ -47,7 +47,7 @@ const Register = () => {
   }else if(signUp_stage == 2){
       //enter the OTP 
     return (
-      <VerifyAccount text='Next' onPress={handleSignUp}/>
+      <VerifyAccount text='Verify' onPress={handleSignUp}/>
     );
 
   }
