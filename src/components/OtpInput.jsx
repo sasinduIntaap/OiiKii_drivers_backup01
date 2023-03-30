@@ -12,10 +12,33 @@ const OtpInput = () => {
     <Text style={{fontWeight:'600'}}>Please enter the OTP you recieved</Text>
     </View>
     <View style={styles.input_container}>
-      <TextInput style={styles.input}/>
-      <TextInput style={styles.input}/>
-      <TextInput style={styles.input}/>
-      <TextInput style={styles.input}/>
+      <TextInput style={styles.input} keyboardType='number-pad' maxLength={1} onChangeText={text =>{
+        text && secondInput.current.focus();
+      }}
+        ref={firstInput}
+      />
+      <TextInput style={styles.input}
+          keyboardType='number-pad' maxLength={1} onChangeText={text =>{
+        text && thirdInput.current.focus();
+      }}
+
+        ref={secondInput}
+
+      />
+      <TextInput style={styles.input}
+          keyboardType='number-pad' maxLength={1} onChangeText={text =>{
+        text && fourthInput.current.focus();
+      }}
+
+        ref={thirdInput}
+
+      />
+      <TextInput style={styles.input}
+          keyboardType='number-pad' maxLength={1}
+
+        ref={fourthInput}
+
+      />
     </View>
     <View>
         <Text style={{color:'#818181', fontSize:12}}>Haven't recieved OTP yet? <Text style={{color:'#F66F6F'}}>resend</Text></Text>
