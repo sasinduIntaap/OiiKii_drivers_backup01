@@ -3,6 +3,7 @@ import { StyleSheet, View, Text, TextInput, TouchableOpacity,Alert,ImageBackgrou
 import CreateNewAccount from '../components/SignUp_stack/CreateNewAccount';
 import VerifyMethod from '../components/SignUp_stack/VerifyMethod';
 import VerifyAccount from '../components/SignUp_stack/VerifyAccount';
+import ProfilePicture from '../components/SignUp_stack/ProfilePicture';
 
 
 
@@ -50,6 +51,10 @@ const Register = () => {
       <VerifyAccount text='Verify' onPress={handleSignUp}/>
     );
 
+  }else if(signUp_stage == 3){
+    return (
+      <ProfilePicture text='Next' onPress={handleSignUp} />
+    );
   }
 }
 

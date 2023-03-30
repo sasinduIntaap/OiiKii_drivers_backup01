@@ -93,5 +93,9 @@ const styles = StyleSheet.create({
           width:'100%',
            marginLeft: '5%'
           },
-          middleBody_container:{alignItems:'center', marginTop:10, marginBottom:10}
+          middleBody_container:{
+            alignItems:'center',
+             marginTop:10,
+              marginBottom:10
+            }
 });
