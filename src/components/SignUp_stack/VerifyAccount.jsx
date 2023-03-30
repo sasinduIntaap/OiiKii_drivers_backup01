@@ -1,19 +1,14 @@
-import React, { useState,useRef,useEffect } from 'react';
-import { StyleSheet, View, Text, TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image } from 'react-native';
-import CreateNewAccount from '../components/SignUp_stack/CreateNewAccount';
-import VerifyMethod from '../components/SignUp_stack/VerifyMethod';
-import VerifyAccount from '../components/SignUp_stack/VerifyAccount';
-
-
+import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image } from 'react-native'
+import React,{ useState,useRef,useEffect } from 'react'
+import Primary_button from '../Primary_button';
+import PhoneIcon from '../../assets/svg_icons/phoneIcon.svg';
+import MailIcon from '../../assets/svg_icons/mailIcon.svg';
+import Buildings from '../../assets/svg_icons/building.svg';
 
 const {height, width} = Dimensions.get('window');
 const bk_image = {uri :'http://www.w3.org/2000/svg'};
 
-const Register = () => {
-  useEffect(()=>{
-    console.log('height ' + height);
-    console.log('width ' + width);
-  });
+const VerifyAccount = ({text,onPress}) => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -21,39 +16,37 @@ const Register = () => {
   const [termsChecked, setTermsChecked] = useState('');
   const [signUp_stage, setSignUp_stage] = useState(0);
   const phoneInput = useRef(null);
-
-  const handleSignUp = () => {
-    // handle sign-up logic here
-    setSignUp_stage(signUp_stage + 1);
-    console.log('sign up pressed');
-    console.log(signUp_stage);
-  };
-
-  const getPhoneNumber = () => {
-    Alert.alert(phoneNumber);
-  };
-
-  if(signUp_stage == 0){
-    // create new account
-    return (
-      <CreateNewAccount onPress={handleSignUp}/>
-    );
-  }else if(signUp_stage == 1){
-    //verify OTP method selection
-    return (
-      <VerifyMethod onPress={handleSignUp}/>
-    );
-    
-  }else if(signUp_stage == 2){
-      //enter the OTP 
-    return (
-      <VerifyAccount text='Next' onPress={handleSignUp}/>
-    );
-
-  }
+  return (
+    <>
+      <View style={styles.container}>
+      {/* box shadow, elevated container begins */}
+      <View style={styles.boxShadow}>
+      <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
+      <Text style={styles.title}>Verify your Account</Text>
+      </View>
+      <View style={{alignItems:'center'}}>
+        <Text style={{fontWeight:'400', fontSize:16}}>We've sent an OTP to</Text>
+        <Text style={{fontWeight:'400', fontSize:16, color:'#F66F6F'}}>+44****000</Text>
+      </View>
+      <Primary_button text={text} onPress={onPress}/>
+      
+      </View> 
+      {/* box shadow, elevated container ends */}
+      <View>
+      {/* the buildings image */}
+      <Buildings />
+      </View>
+        
+        
+        
+        
+      </View>
+      
+      </>
+  )
 }
 
-export default Register
+export default VerifyAccount
 
 const styles = StyleSheet.create({
 
@@ -141,8 +134,4 @@ const styles = StyleSheet.create({
       checkBoxText:{
         fontSize: 15,
       }
-      
-      
-      
-      
-})
+});

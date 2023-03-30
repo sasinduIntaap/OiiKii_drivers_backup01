@@ -20,10 +20,10 @@ const WelcomeScreen = (props) => {
       <BuildingWithDriver/>
       </View>
       <View style={styles.bottomContent_container}>
-      <Primary_button text='Sign Up'/>
+      <Primary_button text='Sign Up' onPress={() => navigation.navigate('Register')}/>
       <View style={styles.devider_container}>
         <View style={styles.devider}></View>
-        <Text style={{paddingLeft: 10, paddingRight:10}}>Or</Text>
+        <Text style={styles.or}>Or</Text>
         <View style={styles.devider}></View>
       </View>
       
@@ -98,7 +98,11 @@ const styles = StyleSheet.create({
   },
   banner_container:{
     top:20
-  }
+  }, 
+  or:{
+    paddingLeft: 10,
+     paddingRight:10
+    }
 });
 
 export default WelcomeScreen;
