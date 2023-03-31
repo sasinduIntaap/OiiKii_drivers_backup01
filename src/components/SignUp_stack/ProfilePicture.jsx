@@ -19,7 +19,7 @@ const ProfilePicture = ({text,onPress}) => {
     
       <View style={styles.container}>
       {/* box shadow, elevated container begins */}
-      <View style={[styles.boxShadow,{marginTop:windowHeight >= 831 ? 70 : 0 || windowHeight >= 780 ? 150 : 0}]}>
+      <View style={[styles.boxShadow,{top:windowHeight >830 ? 40 : 0 || windowHeight < 781 ? 70 : 0}]}>
       <View style={styles.title_container}>
       <Text style={styles.title}>Set up your profile Picture!</Text>
       </View>
