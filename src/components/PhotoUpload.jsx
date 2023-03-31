@@ -1,10 +1,38 @@
 import { StyleSheet, Text, View,TouchableOpacity } from 'react-native';
-import React from 'react';
+import React,{useState, useEffect} from 'react';
 import Camera_icon from '../assets/svg_icons/camera_icon.svg';
+import * as ImagePicker from 'expo-image-picker';
 
 const PhotoUpload = ({width, onPress,title,discription,height}) => {
+
+    const [hasGalleryPermission,setHasGalleryPermissions] = useState(null);
+    const [hasCameraPermissions,setHasCameraPermissions] = useState(null);
+    const [image,setImage] = useState(null);
+
+    useEffect(() => {
+        (async () => {
+            const galleryStatus = await ImagePicker.requestMediaLibraryPermissionsAsync();
+            setHasGalleryPermissions(galleryStatus.status === 'granted');
+            const cameraStatus = await ImagePicker.requestCameraPermissionsAsync();
+            setHasCameraPermissions(cameraStatus.status === 'granted');
+        })();
+    },[]);
+
+    const pickImage = async () =>{
+        let result = await ImagePicker.launchImageLibraryAsync({
+            mediaTypes: ImagePicker.MediaTypeOptions.Images,
+            allowsEditing:true,
+            aspect:[4,3],
+            quality:1
+        });
+
+        console.log(result);
+    }
+
+    
+
   return (
-    <TouchableOpacity style={[styles.container,{width:width,height:height}]} onPress={onPress}>
+    <TouchableOpacity style={[styles.container,{width:width,height:height}]} onPress={() => pickImage()}>
       <Text style={styles.title}>{title}</Text>
       <Camera_icon />
       <View style={{width:250, alignItems:'center', marginTop:10}}>
@@ -45,3 +73,5 @@ const styles = StyleSheet.create({
         margin:10
     }
 })
+
+//commit before installing image crop picker
