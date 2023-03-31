@@ -3,6 +3,7 @@ import React,{useState, useEffect} from 'react';
 import Camera_icon from '../assets/svg_icons/camera_icon.svg';
 import * as ImagePicker from 'expo-image-picker';
 
+
 const PhotoUpload = ({width, onPress,title,discription,height}) => {
 
     const [hasGalleryPermission,setHasGalleryPermissions] = useState(null);
@@ -33,6 +34,7 @@ const PhotoUpload = ({width, onPress,title,discription,height}) => {
 
   return (
     <TouchableOpacity style={[styles.container,{width:width,height:height}]} onPress={() => pickImage()}>
+        
       <Text style={styles.title}>{title}</Text>
       <Camera_icon />
       <View style={{width:250, alignItems:'center', marginTop:10}}>
@@ -75,3 +77,4 @@ const styles = StyleSheet.create({
 })
 
 //commit before installing image crop picker
+//commit brefore installing progress bar package

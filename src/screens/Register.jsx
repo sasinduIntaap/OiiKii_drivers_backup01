@@ -6,6 +6,7 @@ import VerifyAccount from '../components/SignUp_stack/VerifyAccount';
 import ProfilePicture from '../components/SignUp_stack/ProfilePicture';
 import {useNavigation} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
+import Progress_Bar from '../components/Progress_Bar';
 
 
 
@@ -36,7 +37,7 @@ const Register = () => {
     if(signUp_stage >=2){
       navigation.setOptions({
 
-        title: 'progress bar',
+        title: <Progress_Bar />,
         headerTitleAlign:'center'
     
     });
