@@ -23,10 +23,16 @@ const Register = () => {
   const [phoneNumber,setPhoneNumber] = useState('');
   const [termsChecked, setTermsChecked] = useState('');
   const [signUp_stage, setSignUp_stage] = useState(0);
+  const [progressBar,setProgressBar] = useState(0);
   const phoneInput = useRef(null);
   const navigation = useNavigation();
   
 
+  const setProgressBarValue = () => {
+    if(signUp_stage >= 1){
+      setProgressBar(10);
+    }
+  }
   
 
   const handleSignUp = () => {
@@ -37,11 +43,14 @@ const Register = () => {
     if(signUp_stage >=2){
       navigation.setOptions({
 
-        title: <Progress_Bar />,
+        title: <Progress_Bar progress={progressBar} />,
         headerTitleAlign:'center'
     
     });
     }
+
+    setProgressBarValue();
+
   };
 
   const getPhoneNumber = () => {
