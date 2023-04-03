@@ -5,6 +5,7 @@ import PhoneInput from 'react-native-phone-number-input';
 import Checkbox from 'expo-checkbox';
 import Social_Media_Login from '../Social_Media_Login';
 import Primary_button from '../Primary_button';
+import SignUpContainer_elevated from './SignUpContainer_elevated';
 
 
 const {height, width} = Dimensions.get('window');
@@ -25,10 +26,10 @@ const CreateNewAccount = ({onPress}) => {
     
     
     
-    {/* main container */}
-    <View style={styles.container}>
+    
+    
     {/* box shadow, elevated container begins */}
-    <View style={styles.boxShadow}>
+    <SignUpContainer_elevated top='5%'>
     <View style={{justifyContent:'flex-start', width:'100%', marginLeft: '5%', flexDirection:'row', marginTop:5, marginBottom:20 }}>
     <Text style={styles.title}>Create New Account</Text>
     </View>
@@ -96,22 +97,16 @@ const CreateNewAccount = ({onPress}) => {
     </View>
     
     
-    </View> 
+    </SignUpContainer_elevated> 
     {/* box shadow, elevated container ends */}
     
       
       
       
       
-    </View>
+    
     {/* the buildings image */}
-    <View>
-    <Image source={require('../../assets/images/BuildingOnly.png')} style={{width:'100%', height:200}} />
-      
     
-      {/* <Buildings/> */}
-    
-    </View>
     
     
     </>
@@ -122,33 +117,8 @@ export default CreateNewAccount
 
 const styles = StyleSheet.create({
 
-  container: {
-      flex: 6,
-      alignItems: 'center',
-      justifyContent: 'space-between',
-      backgroundColor: 'white',
-      height:'100%'
-      
-      
-      
-
-      
-    },
-    boxShadow: {
-      padding:20,
-      // marginBottom:10,
-      // flex:6,
-      elevation: 20,
-      borderRadius: 11,
-      maxHeight: 700,
-      width:'80%',
-      // marginTop: '5%',
-      alignItems: 'center',
-      justifyContent: 'center',
-      backgroundColor: 'white',
-      
-
-    },
+  
+    
 
     title: {
       fontSize: 20,
@@ -211,3 +181,7 @@ const styles = StyleSheet.create({
     
     
 })
+
+// sign up page responsiveness, 
+//background image container of all pages
+//implement one main container with box-shadow

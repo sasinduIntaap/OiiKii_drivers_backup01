@@ -4,6 +4,7 @@ import Primary_button from '../Primary_button';
 import PhoneIcon from '../../assets/svg_icons/phoneIcon.svg';
 import MailIcon from '../../assets/svg_icons/mailIcon.svg';
 import Buildings from '../../assets/svg_icons/building.svg';
+import SignUpContainer_elevated from './SignUpContainer_elevated';
 
 const {height, width} = Dimensions.get('window');
 const bk_image = {uri :'http://www.w3.org/2000/svg'};
@@ -18,9 +19,9 @@ const VerifyMethod = ({onPress}) => {
   const phoneInput = useRef(null);
   return (
     <>
-    <View style={styles.container}>
     
-    <View style={styles.boxShadow}>
+    
+    <SignUpContainer_elevated top='10%' padding={20}>
     <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
     <Text style={styles.title}>Select your prefered verifying method</Text>
     </View>
@@ -42,19 +43,16 @@ const VerifyMethod = ({onPress}) => {
     
     <Primary_button text='Next' onPress={onPress}/>
     
-    </View> 
+    </SignUpContainer_elevated> 
     
 
     
-    <View style={{height:'100%', marginBottom:'20%'}}>
-    {/* the buildings image */}
-    <Buildings />
-    </View>
+    
     
       
       
       
-    </View>
+    
     
     
     </>

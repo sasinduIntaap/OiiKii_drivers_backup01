@@ -7,6 +7,8 @@ import ProfilePicture from '../components/SignUp_stack/ProfilePicture';
 import {useNavigation} from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
 import Progress_Bar from '../components/Progress_Bar';
+import SignUpMainContainer from '../components/SignUp_stack/SignUpMainContainer';
+import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer_elevated';
 
 
 
@@ -78,6 +80,31 @@ const Register = () => {
     return (
       <ProfilePicture text='Next' onPress={handleSignUp} />
     );
+  }else if(signUp_stage == 4){
+    return(
+      <SignUpContainer_elevated top='10%'>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        <Text>This is the main Container</Text>
+        
+
+      </SignUpContainer_elevated>
+    )
   }
 }
 
