@@ -19,13 +19,13 @@ const WelcomeScreen = (props) => {
     <View style={styles.container}>
       
       <Logo
-        style={[styles.logo,{top: windowHeight < 534 ? '5%' : 0, marginBottom: windowHeight > 866 ? '20%' : 0}]}
+        style={[styles.logo,{top: windowHeight < 534 ? '5%' : 0, marginBottom:  windowHeight > 830 ? '20%' : 0}]}
          
         
       />
       <BuildingWithDriver />
       <Primary_button text='Sign Up' onPress={() => navigation.navigate('Register')}/>
-      <View style={[styles.devider_container,{marginTop: windowHeight > 866 ? 10 : 0, marginBottom: windowHeight > 866 ? 10 : 0}]}>
+      <View style={[styles.devider_container,{marginTop: windowHeight > 830 ? 10 : 0, marginBottom: windowHeight > 830 ? 10 : 0}]}>
         <View style={styles.devider}></View>
         <Text style={styles.or}>Or</Text>
         <View style={styles.devider}></View>
