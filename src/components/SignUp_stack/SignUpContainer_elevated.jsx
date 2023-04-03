@@ -1,10 +1,10 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
 import SignUpMainContainer from './SignUpMainContainer'
-const SignUpContainer_elevated = ({children,height,top,padding,margin,marginTop,marginBottom}) => {
+const SignUpContainer_elevated = ({children,height,top,padding,margin,marginTop,marginBottom,illustration, bottom}) => {
   return (
-    <SignUpMainContainer>
-      <View style={[{height:height, top:top, padding:padding, margin:margin, marginTop:marginTop, marginBottom:marginBottom},styles.container]}>
+    <SignUpMainContainer illustration={illustration}>
+      <View style={[{height:height, top:top, padding:padding, margin:margin, marginTop:marginTop, marginBottom:marginBottom, bottom:bottom},styles.container]}>
             {children}
       </View>
     </SignUpMainContainer>
@@ -15,7 +15,7 @@ export default SignUpContainer_elevated
 
 const styles = StyleSheet.create({
     container:{
-        bottom:'70%',
+        // bottom:'70%',
         // top:'5%',
         
         elevation: 20,

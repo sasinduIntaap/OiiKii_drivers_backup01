@@ -1,8 +1,8 @@
 import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image,SafeAreaView } from 'react-native'
 import React,{ useState,useRef,useEffect } from 'react'
 import Primary_button from '../Primary_button';
-import ProfilepicIllustration from '../../assets/svg_icons/ProfilepicIllustration.svg';
 import PhotoUpload from '../PhotoUpload';
+import SignUpContainer_elevated from './SignUpContainer_elevated';
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -16,10 +16,10 @@ const ProfilePicture = ({text,onPress}) => {
   });
 
   return (
-    
-      <View style={styles.container}>
-      {/* box shadow, elevated container begins */}
-      <View style={[styles.boxShadow,{top:windowHeight >830 ? 40 : 0 || windowHeight < 781 ? 70 : 0}]}>
+    <>
+      
+      
+      <SignUpContainer_elevated top='3%' padding={20} illustration = 'pic'>
       <View style={styles.title_container}>
       <Text style={styles.title}>Set up your profile Picture!</Text>
       </View>
@@ -33,17 +33,14 @@ const ProfilePicture = ({text,onPress}) => {
       
       <Primary_button text={text} onPress={onPress}/>
       
-      </View> 
-      {/* box shadow, elevated container ends */}
-      <View>
-      {/* the buildings image */}
-      <ProfilepicIllustration />
-      </View>
+      </SignUpContainer_elevated> 
+      
+      
+        
+        </>
         
         
-        
-        
-      </View>
+      
       
       
   );

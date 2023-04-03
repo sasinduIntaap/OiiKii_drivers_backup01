@@ -5,6 +5,7 @@ import PhoneIcon from '../../assets/svg_icons/phoneIcon.svg';
 import MailIcon from '../../assets/svg_icons/mailIcon.svg';
 import Otpillustration from '../../assets/svg_icons/OTPillustartion.svg';
 import OtpInput from '../OtpInput';
+import SignUpContainer_elevated from './SignUpContainer_elevated';
 
 
 const {height, width} = Dimensions.get('window');
@@ -18,9 +19,9 @@ const VerifyAccount = ({text,onPress}) => {
   const phoneInput = useRef(null);
   return (
     
-      <View style={styles.container}>
+      <>
       {/* box shadow, elevated container begins */}
-      <View style={styles.boxShadow}>
+      <SignUpContainer_elevated top='10%' padding={20} illustration='otp' bottom='70%'>
       <View style={styles.title_container}>
       <Text style={styles.title}>Verify your Account</Text>
       </View>
@@ -33,17 +34,14 @@ const VerifyAccount = ({text,onPress}) => {
       </View>
       <Primary_button text={text} onPress={onPress}/>
       
-      </View> 
+      </SignUpContainer_elevated> 
       {/* box shadow, elevated container ends */}
-      <View>
-      {/* the buildings image */}
-      <Otpillustration />
-      </View>
+      
+        </>
         
         
         
-        
-      </View>
+      
       
       
   )

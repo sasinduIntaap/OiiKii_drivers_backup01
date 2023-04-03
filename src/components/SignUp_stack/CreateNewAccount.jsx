@@ -29,7 +29,7 @@ const CreateNewAccount = ({onPress}) => {
     
     
     {/* box shadow, elevated container begins */}
-    <SignUpContainer_elevated top='5%'>
+    <SignUpContainer_elevated top='5%' illustration='buildings' bottom='70%'>
     <View style={{justifyContent:'flex-start', width:'100%', marginLeft: '5%', flexDirection:'row', marginTop:5, marginBottom:20 }}>
     <Text style={styles.title}>Create New Account</Text>
     </View>

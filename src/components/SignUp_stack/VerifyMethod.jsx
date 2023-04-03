@@ -21,7 +21,7 @@ const VerifyMethod = ({onPress}) => {
     <>
     
     
-    <SignUpContainer_elevated top='10%' padding={20}>
+    <SignUpContainer_elevated top='10%' padding={20} illustration='buildings' bottom='70%'>
     <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
     <Text style={styles.title}>Select your prefered verifying method</Text>
     </View>
