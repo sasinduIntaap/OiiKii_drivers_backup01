@@ -4,6 +4,7 @@ import Buildings from '../../assets/svg_icons/building.svg';
 import Otpillustration from '../../assets/svg_icons/OTPillustartion.svg';
 import ProfilepicIllustration from '../../assets/svg_icons/ProfilepicIllustration.svg';
 import LoginIllustration from '../../assets/svg_icons/Loginillustration.svg';
+import BuildingWithDriver from '../../assets/svg_icons/BuildingWithDriver.svg';
 
 const SignUpMainContainer = ({children,illustration}) => {
    
@@ -79,6 +80,24 @@ const SignUpMainContainer = ({children,illustration}) => {
     
     </>
         )
+    }else if(illustration == 'main'){
+        return(
+            <>
+    <SafeAreaView style={styles.container}> 
+        <View>
+        <BuildingWithDriver />
+        </View>
+        
+        <View style={styles.bodyContainer}>
+        {children}
+        </View>
+        
+    </SafeAreaView>
+      
+    
+    
+    </>
+        )
     }
     
 }
@@ -95,7 +114,9 @@ const styles = StyleSheet.create({
         position:'absolute',
         alignSelf:'center',
         width:'80%',
-        height:'100%'
+        height:'100%',
+        padding:10,
+        
         
     }
 })

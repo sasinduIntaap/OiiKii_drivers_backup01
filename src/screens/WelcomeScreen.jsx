@@ -1,37 +1,49 @@
-import React from 'react';
-import { StyleSheet, View, TouchableOpacity, Text } from 'react-native';
+import React,{useEffect} from 'react';
+import { StyleSheet, View, TouchableOpacity, Text, Dimensions } from 'react-native';
 import Logo from '../assets/svg_icons/AppLogo.svg';
 import BuildingWithDriver from '../assets/svg_icons/BuildingWithDriver.svg';
 import {useNavigation} from '@react-navigation/native';
 import Primary_button from '../components/Primary_button';
 
 
+const windowWidth = Dimensions.get('window').width;
+const windowHeight = Dimensions.get('window').height;
 
 const WelcomeScreen = (props) => {
+  useEffect(()=>{
+    console.log('width '+ windowWidth);
+    console.log('height '+ windowHeight);
+  },[]);
   const navigation = useNavigation();
   return (
     <View style={styles.container}>
+      
       <Logo
-        style={styles.logo}
-        width={151.72}
-        height={52}
+        style={[styles.logo,{top: windowHeight < 534 ? '5%' : 0, marginBottom: windowHeight > 866 ? '20%' : 0}]}
+         
+        
       />
-      <View style={styles.banner_container}>
-      <BuildingWithDriver/>
-      </View>
-      <View style={styles.bottomContent_container}>
+      <BuildingWithDriver />
       <Primary_button text='Sign Up' onPress={() => navigation.navigate('Register')}/>
       <View style={styles.devider_container}>
         <View style={styles.devider}></View>
         <Text style={styles.or}>Or</Text>
         <View style={styles.devider}></View>
       </View>
-      
-        <View style={styles.loginText_container}>
+      <View style={styles.loginText_container}>
         <Text style={styles.loginText} onPress={() => navigation.navigate('Login')}>Log In</Text>
         <Text style={styles.normalText}> to the existing account</Text>
         </View>
-      </View>
+      
+      {/* <View style={[styles.banner_container,{bottom: windowHeight < 534 ? '10%' : 0, alignItems:'center'}]}>
+      
+        
+        
+      </View> */}
+      {/* <View style={{width:'100%', alignItems:'center', marginBottom:20}}>
+        
+      </View> */}
+      
       
     </View>
   );
@@ -39,28 +51,17 @@ const WelcomeScreen = (props) => {
 
 const styles = StyleSheet.create({
   container: {
-    flex: 1,
+    flex: 10,
     alignItems: 'center',
-    justifyContent: 'center',  
+    justifyContent: 'center',
+    
+      
   },
   logo: {
-    position: 'absolute',
-    top: 118,
+    // position: 'absolute',
+    // top: '%',
   },
-  loginButton: {
-    position: 'absolute',
-    bottom: 190,
-    padding: 10,
-    left: 184,
-  },
-  loginButtonText: {
-    color: '#FFFFFF',
-    fontFamily:'Roboto',
-    textAlign: 'center',
-    fontWeight: 'bold',
-    fontSize: 16,
-    lineHeight: 18.75,
-  },
+  
   gradient: {
     position: 'absolute',
     width: 290,
@@ -94,10 +95,11 @@ const styles = StyleSheet.create({
     flexDirection:'row'
   },
   bottomContent_container:{
-    width:'100%', alignItems:'center', justifyContent:'space-evenly', top:60,height:200
+    width:'100%', alignItems:'center', justifyContent:'space-evenly'
   },
   banner_container:{
-    top:20
+    // top:20,
+    padding:0
   }, 
   or:{
     paddingLeft: 10,
