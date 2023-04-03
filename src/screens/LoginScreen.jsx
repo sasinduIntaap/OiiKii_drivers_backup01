@@ -5,6 +5,7 @@ import Buildings from '../assets/svg_icons/building.svg';
 import {useNavigation} from '@react-navigation/native';
 import Social_Media_Login from '../components/Social_Media_Login';
 import Primary_button from '../components/Primary_button';
+import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer_elevated';
 
 
 
@@ -37,15 +38,13 @@ const Register = () => {
     return (
       <>
       
-      {/* main container */}
-      <View style={styles.container}>
-      {/*elevated container*/}
-      <View style={styles.boxShadow}>
-        {/* title container */}
+      
+      <SignUpContainer_elevated illustration='login' top='5%' padding={10}>
+        
       <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
       <Text style={styles.title_text}>Welcome Back!</Text>
       </View>
-        {/* email text input container */}
+        
         <View style={styles.texhtInpu_container}>
         <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Email</Text></View>
         <TextInput
@@ -55,7 +54,7 @@ const Register = () => {
           value={email}
         />
         </View>
-        {/* password text input container */}
+        
         <View style={styles.texhtInpu_container}>
         <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Password</Text></View>
         <TextInput
@@ -68,25 +67,60 @@ const Register = () => {
         </View>
         
         
-      {/* sign in button */}
+      
       <Primary_button text='Sign In'/>
       <Text style={styles.or}>Or</Text>
-      {/* socialmedia login container */}
+      
       <View style={styles.social_login_container}>
       <Social_Media_Login text='Continue with Google' mediaType='google' onPress={()=> console.log('google pressed')}/>
       <Social_Media_Login text='Continue with Apple' mediaType='apple' onPress={()=> console.log('google pressed')}/>
       </View>
       
-      </View> 
-      {/* the buildings image */}
-      <View>
-      <Buildings />
+      </SignUpContainer_elevated> 
+
+
+      
+      {/* <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
+      <Text style={styles.title_text}>Welcome Back!</Text>
       </View>
         
+        <View style={styles.texhtInpu_container}>
+        <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Email</Text></View>
+        <TextInput
+          style={styles.input}
+          placeholder="Email"
+          onChangeText={setEmail}
+          value={email}
+        />
+        </View>
+        
+        <View style={styles.texhtInpu_container}>
+        <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Password</Text></View>
+        <TextInput
+          style={styles.input}
+          placeholder="Password"
+          secureTextEntry
+          onChangeText={setPassword}
+          value={password}
+        />
+        </View>
+        
+        
+      
+      <Primary_button text='Sign In'/>
+      <Text style={styles.or}>Or</Text>
+      
+      <View style={styles.social_login_container}>
+      <Social_Media_Login text='Continue with Google' mediaType='google' onPress={()=> console.log('google pressed')}/>
+      <Social_Media_Login text='Continue with Apple' mediaType='apple' onPress={()=> console.log('google pressed')}/>
+      </View> */}
+      
+      
         
         
         
-      </View>
+        
+      
       
       </>
     );

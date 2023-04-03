@@ -1,6 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native'
 import React from 'react'
-import SignUpMainContainer from './SignUpMainContainer'
+import SignUpMainContainer from './SignUpMainContainer';
 const SignUpContainer_elevated = ({children,height,top,padding,margin,marginTop,marginBottom,illustration, bottom}) => {
   return (
     <SignUpMainContainer illustration={illustration}>

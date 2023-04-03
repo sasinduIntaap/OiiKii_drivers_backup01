@@ -3,6 +3,7 @@ import React,{useEffect} from 'react'
 import Buildings from '../../assets/svg_icons/building.svg';
 import Otpillustration from '../../assets/svg_icons/OTPillustartion.svg';
 import ProfilepicIllustration from '../../assets/svg_icons/ProfilepicIllustration.svg';
+import LoginIllustration from '../../assets/svg_icons/Loginillustration.svg';
 
 const SignUpMainContainer = ({children,illustration}) => {
    
@@ -48,6 +49,24 @@ const SignUpMainContainer = ({children,illustration}) => {
     <SafeAreaView style={styles.container}> 
         <View>
         <ProfilepicIllustration />
+        </View>
+        
+        <View style={styles.bodyContainer}>
+        {children}
+        </View>
+        
+    </SafeAreaView>
+      
+    
+    
+    </>
+        )
+    }else if(illustration == 'login'){
+        return(
+            <>
+    <SafeAreaView style={styles.container}> 
+        <View>
+        <LoginIllustration />
         </View>
         
         <View style={styles.bodyContainer}>
