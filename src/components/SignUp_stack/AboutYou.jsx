@@ -1,13 +1,20 @@
-import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image,SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image,SafeAreaView, Modal } from 'react-native'
 import React,{ useState,useRef,useEffect } from 'react'
 import Primary_button from '../Primary_button';
 import PhotoUpload from '../PhotoUpload';
 import SignUpContainer_elevated from './SignUpContainer_elevated';
 import SignUpMainContainer from './SignUpMainContainer';
 import CustomTextInput from '../CustomTextInput';
+import CountryPicker from 'react-native-country-picker-modal';
+import { DarkTheme } from '@react-navigation/native';
+
 
 
 const AboutYou = ({text,onPress}) => {
+    const [countryModalOpen,setCountryModalOpen] = useState(false);
+    const [countryCode, setCountryCode] = useState('BR');
+    const [country, setCountry] = useState(null);
+    const [languagePickerVisible,setLanguagePickerVisible] = useState(false);
     return (
         <>
           
@@ -61,8 +68,15 @@ const AboutYou = ({text,onPress}) => {
         {/* nationality */}
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Nationality</Text></View>
-      <TouchableOpacity style={{width:'100%'}}>
+      <TouchableOpacity style={{width:'100%'}} onPress={()=> setCountryModalOpen(true)}>
       <CustomTextInput placeholder='Select your country' editable={false} icon = 'dropDown'/>
+      </TouchableOpacity>
+      </View>
+      {/* language */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Preffered Language</Text></View>
+      <TouchableOpacity style={{width:'100%'}} onPress={()=> setLanguagePickerVisible(true)}>
+      <CustomTextInput placeholder='Select languages' editable={false} icon = 'dropDown'/>
       </TouchableOpacity>
       </View>
       
@@ -72,7 +86,21 @@ const AboutYou = ({text,onPress}) => {
             <Primary_button text={text} onPress={onPress}/>
 
           </View>
+          <CountryPicker 
+          visible={countryModalOpen}
+          onClose={()=> setCountryModalOpen(false)}
+          modalProps={countryModalOpen}
+          containerButtonStyle={{display:'none'}}
+          onSelect={(country) => setCountry(country)}
           
+
+          />
+          <Modal visible={languagePickerVisible}>
+            <View><Text>Language Picker is here</Text></View>
+            <TouchableOpacity onPress={()=>setLanguagePickerVisible(false)}>
+                <Text>Close</Text>
+            </TouchableOpacity>
+          </Modal>
           </SignUpMainContainer> 
           
           
