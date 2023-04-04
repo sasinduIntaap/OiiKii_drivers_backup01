@@ -37,7 +37,7 @@ const PhotoUpload = ({width, onPress,title,discription,height}) => {
         
       <Text style={styles.title}>{title}</Text>
       <Camera_icon />
-      <View style={{width:250, alignItems:'center', marginTop:10}}>
+      <View style={{ width:250, alignItems:'center', marginTop:10}}>
       <Text>{discription}</Text>
       </View>
     </TouchableOpacity>
@@ -56,7 +56,8 @@ const styles = StyleSheet.create({
         paddingLeft:20,
         paddingRight:20,
         paddingTop:60,
-        paddingBottom:70
+        paddingBottom:70,
+        justifyContent:'center'
 
         
 

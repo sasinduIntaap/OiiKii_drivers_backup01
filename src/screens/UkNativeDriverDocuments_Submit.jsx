@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Platform, ScrollView} from "react-native";
 import React, { useState} from "react";
-import ScanCamLogo from "../assets/svg_icons/camera_icon.svg";
 import RadioButtonChoice from "../components/RadioButtonChoice";
 import ScanDocComponents from "../components/ScanDocComponents";
 import Primary_button from "../components/Primary_button";
 import Building from "../assets/svg_icons/Building1.svg";
 import CustomTextInput from "../components/CustomTextInput";
+import ScanImageCont from "../components/ScanImageCont";
 
 const options = [
   { label: "Passport", value: "Passport" },
@@ -54,7 +54,8 @@ const UkNativeDriverDocuments_Submit = () => {
             keyboardType="default"
           />
           <Text style={styles.textInputHeading}>Scan Your Driving License</Text>
-          <View style={styles.scanCont}>
+          <ScanImageCont/>
+          {/* <View style={styles.scanCont}>
             <View
               style={{
                 borderColor: "black",
@@ -82,7 +83,7 @@ const UkNativeDriverDocuments_Submit = () => {
               <ScanCamLogo style={styles.scanCamLogo} width={140} height={18} />
               <Text style={styles.scanText}>Click here to scan</Text>
             </View>
-          </View>
+          </View> */}
           <Text style={{ paddingVertical: 1,  fontWeight: "bold",}} >
             Passport or Residence Permit or Birth Certificate Number
           </Text>
@@ -166,31 +167,31 @@ const styles = StyleSheet.create({
   //   marginBottom: 10,
   //   paddingLeft: 10,
   // },
-  scanCont: {
-    flexDirection: "row",
-    height: 110,
-    alignItems: "center",
-  },
-  scan: {
-    fontFamily: "Roboto",
-    fontSize: 12,
-    fontWeight: "700",
-    textAlign: "center",
-    lineHeight: 14,
-    top: 15,
-  },
-  scanCamLogo: {
-    position: "absolute",
-    bottom: 33,
-  },
-  scanText: {
-    fontFamily: "Roboto",
-    fontSize: 12,
-    fontWeight: "300",
-    textAlign: "center",
-    lineHeight: 14,
-    bottom: -45,
-  },
+  // scanCont: {
+  //   flexDirection: "row",
+  //   height: 110,
+  //   alignItems: "center",
+  // },
+  // scan: {
+  //   fontFamily: "Roboto",
+  //   fontSize: 12,
+  //   fontWeight: "700",
+  //   textAlign: "center",
+  //   lineHeight: 14,
+  //   top: 15,
+  // },
+  // scanCamLogo: {
+  //   position: "absolute",
+  //   bottom: 33,
+  // },
+  // scanText: {
+  //   fontFamily: "Roboto",
+  //   fontSize: 12,
+  //   fontWeight: "300",
+  //   textAlign: "center",
+  //   lineHeight: 14,
+  //   bottom: -45,
+  // },
   textInputHeading: {
     fontFamily: "Roboto",
     fontSize: 14,
