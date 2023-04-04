@@ -9,7 +9,11 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Progress_Bar from '../components/Progress_Bar';
 import SignUpMainContainer from '../components/SignUp_stack/SignUpMainContainer';
 import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer_elevated';
+<<<<<<< HEAD
 import UkNativeDriverDocuments_Submit from './UkNativeDriverDocuments_Submit';
+=======
+import AboutYou from '../components/SignUp_stack/AboutYou';
+>>>>>>> 4c1cec7c01cf28252920fbb7f042ddca23df3785
 
 
 
@@ -29,6 +33,11 @@ const Register = () => {
   const [progressBar,setProgressBar] = useState(0);
   const phoneInput = useRef(null);
   const navigation = useNavigation();
+
+
+  useEffect(()=>{},[
+    console.log('sign up stage '+signUp_stage)
+  ]);
   
 
   const setProgressBarValue = () => {
@@ -42,7 +51,7 @@ const Register = () => {
     // handle sign-up logic here
     setSignUp_stage(signUp_stage + 1);
     console.log('sign up pressed');
-    console.log(signUp_stage);
+    // console.log(signUp_stage);
     if(signUp_stage >=2){
       navigation.setOptions({
 
@@ -83,7 +92,11 @@ const Register = () => {
     );
   }else if(signUp_stage == 4){
     return(
+<<<<<<< HEAD
       <UkNativeDriverDocuments_Submit />
+=======
+      <AboutYou text='Next' onPress={handleSignUp}/>
+>>>>>>> 4c1cec7c01cf28252920fbb7f042ddca23df3785
     )
   }
 }
