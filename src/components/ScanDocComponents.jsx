@@ -1,6 +1,6 @@
 import { View, Text, TouchableOpacity, StyleSheet } from 'react-native';
 import React, { useState } from 'react';
-import FileDocIcon from '../assets/images/scandocicon.svg';
+import FileDocIcon from '../assets/svg_icons/scandocicon.svg';
 
 const ScanDocComponents = ({ passportNumber,text }) => {
   const [passportDocument, setPassportDocument] = useState(null);

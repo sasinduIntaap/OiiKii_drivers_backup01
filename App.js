@@ -15,11 +15,11 @@ const options = [
 ];
 export default function App() {
   return (
-    // <NavigationContainer>
-    // <AuthNavigator />
-    // </NavigationContainer>
+    <NavigationContainer>
+    <AuthNavigator />
+    </NavigationContainer>
     // <CustomTextInput />
-    <RadioButtonChoice values={options}/>
+    // <RadioButtonChoice values={options}/>
   );
 }
 
