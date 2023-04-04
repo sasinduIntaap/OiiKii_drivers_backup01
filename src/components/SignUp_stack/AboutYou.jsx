@@ -12,7 +12,7 @@ const AboutYou = ({text,onPress}) => {
         <>
           
           
-          <SignUpMainContainer top='3%' padding={20} illustration = 'pic'>
+          <SignUpMainContainer top='3%' padding={20}>
           <View style={styles.title_container}>
           <Text style={styles.title}>About You!</Text>
           </View>
@@ -21,15 +21,52 @@ const AboutYou = ({text,onPress}) => {
           {/*first name  */}
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>First Name</Text></View>
-      <CustomTextInput />
+      <CustomTextInput placeholder='First Name'/>
       </View>
       {/* last name */}
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Last Name</Text></View>
-      <CustomTextInput />
+      <CustomTextInput placeholder='Last Name'/>
       </View>
-            
-          </View>
+      {/* date of birth */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Date of Birth</Text></View>
+      <View style={styles.dateBtn_container}>
+      <TouchableOpacity style={styles.date_touchableOpacity}>
+        <Text>Date</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.date_touchableOpacity}>
+        <Text>Month</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.date_touchableOpacity}>
+        <Text>Year</Text>
+      </TouchableOpacity>
+      </View>
+      </View>
+      {/* gender */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Gender</Text></View>
+      <View style={styles.dateBtn_container}>
+      <TouchableOpacity style={styles.date_touchableOpacity}>
+        <Text>Male</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.date_touchableOpacity}>
+        <Text>Female</Text>
+      </TouchableOpacity>
+      <TouchableOpacity style={styles.date_touchableOpacity}>
+        <Text>Prefer not to say</Text>
+      </TouchableOpacity>
+      </View>
+      </View>
+        {/* nationality */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Nationality</Text></View>
+      <TouchableOpacity style={{width:'100%'}}>
+      <CustomTextInput placeholder='Select your country' editable={false} icon = 'dropDown'/>
+      </TouchableOpacity>
+      </View>
+      
+      </View>
           
           <View style={{alignItems:'center'}}>
             <Primary_button text={text} onPress={onPress}/>
@@ -91,5 +128,18 @@ const styles = StyleSheet.create({
             
              marginTop:10,
               marginBottom:10
-            }
+            },
+    date_touchableOpacity:{
+        borderWidth:0.8,
+         borderColor:'#9D9D9D',
+          padding:10,
+           borderRadius:7,
+
+        },
+    dateBtn_container:{
+        flexDirection:'row',
+         justifyContent:'space-between',
+          width:'100%',
+          paddingBottom:'5%'
+        }
 })

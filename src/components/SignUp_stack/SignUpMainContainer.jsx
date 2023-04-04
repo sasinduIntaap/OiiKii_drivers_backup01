@@ -98,6 +98,24 @@ const SignUpMainContainer = ({children,illustration,top,margin,marginTop,marginB
     
     </>
         )
+    }else{
+        return(
+            <>
+    <SafeAreaView style={styles.container}> 
+        <View>
+        {/* <BuildingWithDriver /> */}
+        </View>
+        
+        <View style={styles.bodyContainer}>
+        {children}
+        </View>
+        
+    </SafeAreaView>
+      
+    
+    
+    </>
+        )
     }
     
 }
