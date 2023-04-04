@@ -9,6 +9,7 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Progress_Bar from '../components/Progress_Bar';
 import SignUpMainContainer from '../components/SignUp_stack/SignUpMainContainer';
 import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer_elevated';
+import AboutYou from '../components/SignUp_stack/AboutYou';
 
 
 
@@ -28,6 +29,11 @@ const Register = () => {
   const [progressBar,setProgressBar] = useState(0);
   const phoneInput = useRef(null);
   const navigation = useNavigation();
+
+
+  useEffect(()=>{},[
+    console.log('sign up stage '+signUp_stage)
+  ]);
   
 
   const setProgressBarValue = () => {
@@ -41,7 +47,7 @@ const Register = () => {
     // handle sign-up logic here
     setSignUp_stage(signUp_stage + 1);
     console.log('sign up pressed');
-    console.log(signUp_stage);
+    // console.log(signUp_stage);
     if(signUp_stage >=2){
       navigation.setOptions({
 
@@ -82,28 +88,7 @@ const Register = () => {
     );
   }else if(signUp_stage == 4){
     return(
-      <SignUpContainer_elevated top='10%'>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        <Text>This is the main Container</Text>
-        
-
-      </SignUpContainer_elevated>
+      <AboutYou text='Next' onPress={handleSignUp}/>
     )
   }
 }

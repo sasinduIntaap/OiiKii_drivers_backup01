@@ -5,6 +5,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 const Progress_Bar = ({progress}) => {
     console.log('progress is' + progress);
   return (
+    <View>
     <View style={styles.container}>
       {progress == 10 ? <LinearGradient style={styles.gradient_circle} colors={['#F66F6F', '#DB0DC1']}></LinearGradient> : <View style={styles.circle}></View>}
       <View style={styles.bar}>
@@ -24,6 +25,8 @@ const Progress_Bar = ({progress}) => {
       </View>
       <View style={styles.circle}></View>
       
+    </View>
+    <View style={{alignItems:'center'}}><Text style={{color:'#EB4890'}}>{progress == 10 ? 'Personal Details' : '' }</Text></View>
     </View>
   )
 }

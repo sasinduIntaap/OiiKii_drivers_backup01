@@ -6,7 +6,7 @@ import ProfilepicIllustration from '../../assets/svg_icons/ProfilepicIllustratio
 import LoginIllustration from '../../assets/svg_icons/Loginillustration.svg';
 import BuildingWithDriver from '../../assets/svg_icons/BuildingWithDriver.svg';
 
-const SignUpMainContainer = ({children,illustration}) => {
+const SignUpMainContainer = ({children,illustration,top,margin,marginTop,marginBottom,bottom}) => {
    
     if(illustration == 'buildings'){
         return(
@@ -16,7 +16,7 @@ const SignUpMainContainer = ({children,illustration}) => {
             <Buildings />
         </View>
         
-        <View style={styles.bodyContainer}>
+        <View style={[styles.bodyContainer,{top:top, margin:margin, marginTop:marginTop,marginBottom,bottom}]}>
         {children}
         </View>
         
@@ -108,14 +108,15 @@ const styles = StyleSheet.create({
     container: {
         flex:10,
         justifyContent:'flex-end',
-        alignItems:'center'
+        alignItems:'center',
+        backgroundColor:'white'
         },
     bodyContainer:{
         position:'absolute',
         alignSelf:'center',
         width:'80%',
         height:'100%',
-        padding:10,
+        // padding:5,
         
         
     }
