@@ -13,6 +13,9 @@ import UkNativeDriverDocuments_Submit from './UkNativeDriverDocuments_Submit';
 import AboutYou from '../components/SignUp_stack/AboutYou';
 import UkNativeDriverDocumentsforPSV_HGV from './UkNativeDriverDocumentsforPSV_HGV';
 
+import AboutYou from '../components/SignUp_stack/AboutYou';
+
+
 
 
 const {height, width} = Dimensions.get('window');
@@ -91,6 +94,9 @@ const Register = () => {
   }else if(signUp_stage == 4){
     return(
       <AboutYou text='Next' onPress={handleSignUp}/>
+
+      
+
     )
   }else if(signUp_stage == 5){
     return (

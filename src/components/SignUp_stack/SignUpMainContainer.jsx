@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView,ScrollView } from 'react-native'
 import React,{useEffect} from 'react'
 import Buildings from '../../assets/svg_icons/building.svg';
 import Otpillustration from '../../assets/svg_icons/OTPillustartion.svg';
@@ -98,6 +98,25 @@ const SignUpMainContainer = ({children,illustration,top,margin,marginTop,marginB
     
     </>
         )
+
+    }else{
+        return(
+            <>
+    <SafeAreaView style={styles.container}> 
+        <View>
+        {/* <BuildingWithDriver /> */}
+        </View>
+        
+        <View style={styles.bodyContainer}>
+        {children}
+        </View>
+        
+    </SafeAreaView>
+      
+    
+    
+    </>
+        )
     }
     
 }
@@ -111,6 +130,10 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'white'
         },
+    scrollView:{
+        flex:10,
+        backgroundColor:'white'
+    },
     bodyContainer:{
         position:'absolute',
         alignSelf:'center',
