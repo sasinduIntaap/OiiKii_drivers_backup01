@@ -1,11 +1,11 @@
 import { StyleSheet, Text, View, Platform, ScrollView} from "react-native";
 import React, { useState} from "react";
-import ScanCamLogo from "../assets/images/icon _camera_.svg";
-import RadioButtonChoice from "./RadioButtonChoice";
-import ScanDocComponents from "./ScanDocComponents";
-import Primary_button from "./Primary_button";
-import Building from "../assets/images/Building.svg";
-import CustomTextInput from "./CustomTextInput";
+import ScanCamLogo from "../assets/svg_icons/camera_icon.svg";
+import RadioButtonChoice from "../components/RadioButtonChoice";
+import ScanDocComponents from "../components/ScanDocComponents";
+import Primary_button from "../components/Primary_button";
+import Building from "../assets/svg_icons/Building1.svg";
+import CustomTextInput from "../components/CustomTextInput";
 
 const options = [
   { label: "Passport", value: "Passport" },
@@ -136,7 +136,7 @@ const styles = StyleSheet.create({
   buildingBack: {
     flex: 1,
     resizeMode: "cover",
-    bottom: -650,
+    bottom: -485,
     left: -1,
   },
   heading: {
@@ -154,7 +154,7 @@ const styles = StyleSheet.create({
     paddingVertical: 20,
     paddingHorizontal: 25,
     width: 375,
-    top: -120,
+    bottom: 300,
     marginVertical: 10,
   },
   // input: {

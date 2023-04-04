@@ -44,7 +44,7 @@ const RadioButtonChoice = ({ values }) => {
       {renderOptions()}
       {selectedOption === "Passport" && (
         <View>
-          <Text style={styles.passPortTitle}>Enter Your Passport Number</Text>
+          <Text style={styles.optionTitle}>Enter Your Passport Number</Text>
           <CustomTextInput
             onChangeText={handleTextChange}
             value={text}
@@ -57,13 +57,13 @@ const RadioButtonChoice = ({ values }) => {
             value={passportNumber}
             onChangeText={setPassportNumber}
           /> */}
-          <Text style={styles.passPortTitle}>Attach Your Passport Doc</Text>
+          <Text style={styles.optionTitle}>Attach Your Passport Doc</Text>
           <ScanDocComponents text="Click here to submit passport doc" />
         </View>
       )}
       {selectedOption === "Residence Permit" && (
         <View>
-          <Text style={styles.passPortTitle}>Enter Your Residence Permit Number</Text>
+          <Text style={styles.optionTitle}>Enter Your Residence Permit Number</Text>
           <CustomTextInput
             onChangeText={handleTextChange}
             value={text}
@@ -76,13 +76,13 @@ const RadioButtonChoice = ({ values }) => {
             value={passportNumber}
             onChangeText={setPassportNumber}
           /> */}
-          <Text style={styles.passPortTitle}>Attach Your Residence Permit Doc</Text>
+          <Text style={styles.optionTitle}>Attach Your Residence Permit Doc</Text>
           <ScanDocComponents text="Click here to submit residence permit" />
         </View>
       )}
       {selectedOption === "Birth Certificate" && (
         <View>
-          <Text style={styles.passPortTitle}>Enter Your Birth Certificate Number</Text>
+          <Text style={styles.optionTitle}>Enter Your Birth Certificate Number</Text>
           <CustomTextInput
             onChangeText={handleTextChange}
             value={text}
@@ -95,7 +95,7 @@ const RadioButtonChoice = ({ values }) => {
             value={passportNumber}
             onChangeText={setPassportNumber}
           /> */}
-          <Text style={styles.passPortTitle}>Attach Your Birth Certificate Doc</Text>
+          <Text style={styles.optionTitle}>Attach Your Birth Certificate Doc</Text>
           <ScanDocComponents text="Click here to submit birth certificate" />
         </View>
       )}
@@ -139,7 +139,7 @@ const styles = StyleSheet.create({
   //   marginBottom: 10,
   //   paddingLeft: 10,
   // },
-  passPortTitle: {
+  optionTitle: {
     lineHeight: 15,
     fontWeight: "bold",
   },
