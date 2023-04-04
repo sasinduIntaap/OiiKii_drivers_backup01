@@ -4,6 +4,7 @@ import Primary_button from '../Primary_button';
 import PhotoUpload from '../PhotoUpload';
 import SignUpContainer_elevated from './SignUpContainer_elevated';
 import SignUpMainContainer from './SignUpMainContainer';
+import CustomTextInput from '../CustomTextInput';
 
 
 const AboutYou = ({text,onPress}) => {
@@ -15,15 +16,25 @@ const AboutYou = ({text,onPress}) => {
           <View style={styles.title_container}>
           <Text style={styles.title}>About You!</Text>
           </View>
-          {/* <View style={styles.label_container}>
-              <Text>Profile Picture</Text>
-          </View> */}
+          
           <View style={styles.middleBody_container}>
-          {/* <PhotoUpload   discription='Click here to add your profile picture'/> */}
+          {/*first name  */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>First Name</Text></View>
+      <CustomTextInput />
+      </View>
+      {/* last name */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Last Name</Text></View>
+      <CustomTextInput />
+      </View>
             
           </View>
           
-          <Primary_button text={text} onPress={onPress}/>
+          <View style={{alignItems:'center'}}>
+            <Primary_button text={text} onPress={onPress}/>
+
+          </View>
           
           </SignUpMainContainer> 
           

@@ -17,11 +17,11 @@ const styles = StyleSheet.create({
     height: 40,
     borderColor: "gray",
     borderWidth: 1,
-    borderRadius: 10,
+    borderRadius: 7,
     marginTop: 10,
     marginBottom: 20,
     paddingLeft: 10,
-    width:'auto',
+    width:'100%',
   },
 });
 

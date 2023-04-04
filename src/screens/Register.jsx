@@ -9,11 +9,9 @@ import { createStackNavigator } from '@react-navigation/stack';
 import Progress_Bar from '../components/Progress_Bar';
 import SignUpMainContainer from '../components/SignUp_stack/SignUpMainContainer';
 import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer_elevated';
-<<<<<<< HEAD
-import UkNativeDriverDocuments_Submit from './UkNativeDriverDocuments_Submit';
-=======
+
 import AboutYou from '../components/SignUp_stack/AboutYou';
->>>>>>> 4c1cec7c01cf28252920fbb7f042ddca23df3785
+
 
 
 
@@ -92,11 +90,9 @@ const Register = () => {
     );
   }else if(signUp_stage == 4){
     return(
-<<<<<<< HEAD
-      <UkNativeDriverDocuments_Submit />
-=======
+
       <AboutYou text='Next' onPress={handleSignUp}/>
->>>>>>> 4c1cec7c01cf28252920fbb7f042ddca23df3785
+
     )
   }
 }
