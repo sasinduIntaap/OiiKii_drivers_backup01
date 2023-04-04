@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image,SafeAreaView, Modal } from 'react-native'
+import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image,SafeAreaView, Modal, FlatList,ScrollView } from 'react-native'
 import React,{ useState,useRef,useEffect } from 'react'
 import Primary_button from '../Primary_button';
 import PhotoUpload from '../PhotoUpload';
@@ -7,7 +7,7 @@ import SignUpMainContainer from './SignUpMainContainer';
 import CustomTextInput from '../CustomTextInput';
 import CountryPicker from 'react-native-country-picker-modal';
 import { DarkTheme } from '@react-navigation/native';
-
+import LanguagePicker, { ILanguagePicker } from "react-native-language-select";
 
 
 const AboutYou = ({text,onPress}) => {
@@ -15,6 +15,40 @@ const AboutYou = ({text,onPress}) => {
     const [countryCode, setCountryCode] = useState('BR');
     const [country, setCountry] = useState(null);
     const [languagePickerVisible,setLanguagePickerVisible] = useState(false);
+
+    // Language picker Data
+
+    const LanguageData = [
+        {
+          title: "English",
+          
+        
+          language: "en",
+        },
+        {
+          title: "Italian",
+        
+        },
+        {
+          title: "German",
+        
+        },
+        {
+          title: "Turkish",
+        
+          language: "tr-TR",
+        },
+        {
+          title: "Swedish",
+        
+        },
+        {
+          title: "Japanese",
+        
+        },
+      ];
+
+
     return (
         <>
           
@@ -79,6 +113,11 @@ const AboutYou = ({text,onPress}) => {
       <CustomTextInput placeholder='Select languages' editable={false} icon = 'dropDown'/>
       </TouchableOpacity>
       </View>
+      {/* address */}
+      <View style={{width:'100%', alignItems:'center'}}>
+      <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Current Address</Text></View>
+      <CustomTextInput placeholder='Last Name'/>
+      </View>
       
       </View>
           
@@ -96,10 +135,19 @@ const AboutYou = ({text,onPress}) => {
 
           />
           <Modal visible={languagePickerVisible}>
-            <View><Text>Language Picker is here</Text></View>
+            
             <TouchableOpacity onPress={()=>setLanguagePickerVisible(false)}>
                 <Text>Close</Text>
             </TouchableOpacity>
+            <View>
+            <FlatList 
+                data={LanguageData}
+                renderItem={(item) => <TouchableOpacity style={styles.language_container}><Text style={{color:'black', fontSize:20}}>{item.item.title}</Text></TouchableOpacity>}
+                keyExtractor={(item)=>item.title}
+
+            />
+            </View>
+            
           </Modal>
           </SignUpMainContainer> 
           
@@ -169,5 +217,10 @@ const styles = StyleSheet.create({
          justifyContent:'space-between',
           width:'100%',
           paddingBottom:'5%'
+        },
+        language_container:{
+            
+            padding:10,
+            alignItems:'center'
         }
 })

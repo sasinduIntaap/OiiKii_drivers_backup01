@@ -1,4 +1,4 @@
-import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView } from 'react-native'
+import { StyleSheet, Text, View, TouchableOpacity, SafeAreaView,ScrollView } from 'react-native'
 import React,{useEffect} from 'react'
 import Buildings from '../../assets/svg_icons/building.svg';
 import Otpillustration from '../../assets/svg_icons/OTPillustartion.svg';
@@ -98,6 +98,7 @@ const SignUpMainContainer = ({children,illustration,top,margin,marginTop,marginB
     
     </>
         )
+
     }else{
         return(
             <>
@@ -129,6 +130,10 @@ const styles = StyleSheet.create({
         alignItems:'center',
         backgroundColor:'white'
         },
+    scrollView:{
+        flex:10,
+        backgroundColor:'white'
+    },
     bodyContainer:{
         position:'absolute',
         alignSelf:'center',
