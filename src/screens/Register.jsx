@@ -13,7 +13,7 @@ import UkNativeDriverDocuments_Submit from './UkNativeDriverDocuments_Submit';
 import AboutYou from '../components/SignUp_stack/AboutYou';
 import UkNativeDriverDocumentsforPSV_HGV from './UkNativeDriverDocumentsforPSV_HGV';
 
-import AboutYou from '../components/SignUp_stack/AboutYou';
+
 
 
 
