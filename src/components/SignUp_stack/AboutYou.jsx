@@ -1,13 +1,11 @@
 import { StyleSheet, Text, View,TextInput, TouchableOpacity,Alert,ImageBackground,Dimensions,Image,SafeAreaView, Modal, FlatList,ScrollView } from 'react-native'
 import React,{ useState,useRef,useEffect } from 'react'
 import Primary_button from '../Primary_button';
-import PhotoUpload from '../PhotoUpload';
-import SignUpContainer_elevated from './SignUpContainer_elevated';
 import SignUpMainContainer from './SignUpMainContainer';
 import CustomTextInput from '../CustomTextInput';
 import CountryPicker from 'react-native-country-picker-modal';
-import { DarkTheme } from '@react-navigation/native';
-import LanguagePicker, { ILanguagePicker } from "react-native-language-select";
+import { DateTimePickerAndroid } from '@react-native-community/datetimepicker';
+
 
 
 const AboutYou = ({text,onPress}) => {
@@ -15,7 +13,55 @@ const AboutYou = ({text,onPress}) => {
     const [countryCode, setCountryCode] = useState('BR');
     const [country, setCountry] = useState(null);
     const [languagePickerVisible,setLanguagePickerVisible] = useState(false);
+    const [date,setDate] = useState(new Date());
+    const [day,setDay] = useState('');
+    const [month,setMonth] = useState('');
+    const [year,setYear] = useState('');
 
+    //on date change function
+
+    const onDateChange = (event, selectedDate) => {
+      setDay(selectedDate.getUTCDate());
+      if(selectedDate.getUTCMonth() == 0){
+          setMonth('January');
+      }else if(selectedDate.getUTCMonth() == 1){
+        setMonth('February');
+      }else if(selectedDate.getUTCMonth() == 2){
+        setMonth('March');
+      }else if(selectedDate.getUTCMonth() == 3){
+        setMonth('April');
+      }else if(selectedDate.getUTCMonth() == 4){
+        setMonth('May');
+      }else if(selectedDate.getUTCMonth() == 5){
+        setMonth('June');
+      }else if(selectedDate.getUTCMonth() == 6){
+        setMonth('July');
+      }else if(selectedDate.getUTCMonth() == 7){
+        setMonth('August');
+      }else if(selectedDate.getUTCMonth() == 8){
+        setMonth('September');
+      }else if(selectedDate.getUTCMonth() == 9){
+        setMonth('October');
+      }else if(selectedDate.getUTCMonth() == 10){
+        setMonth('November');
+      }else if(selectedDate.getUTCMonth() == 11){
+        setMonth('December');
+      }
+
+      setYear(''+selectedDate.getUTCFullYear());
+      setDate(selectedDate);
+    };
+
+    //date picker show function 
+    const datePickerShow = () => {
+      DateTimePickerAndroid.open({
+        value: date,
+        onChange:onDateChange,
+        mode: 'date',
+        is24Hour: true,
+        
+      });
+    };
     // Language picker Data
 
     const LanguageData = [
@@ -73,14 +119,14 @@ const AboutYou = ({text,onPress}) => {
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Date of Birth</Text></View>
       <View style={styles.dateBtn_container}>
-      <TouchableOpacity style={styles.date_touchableOpacity}>
-        <Text>Date</Text>
+      <TouchableOpacity style={styles.date_touchableOpacity} onPress={datePickerShow}>
+        <Text>{day == '' ? 'Date' : day}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.date_touchableOpacity}>
-        <Text>Month</Text>
+      <TouchableOpacity style={styles.date_touchableOpacity} onPress={datePickerShow}>
+        <Text>{month == '' ? 'Month' : month}</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.date_touchableOpacity}>
-        <Text>Year</Text>
+      <TouchableOpacity style={styles.date_touchableOpacity} onPress={datePickerShow}>
+        <Text>{year == '' ? 'Year' : year}</Text>
       </TouchableOpacity>
       </View>
       </View>

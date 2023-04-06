@@ -10,7 +10,8 @@ import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer
 
 
 
-const Register = () => {
+
+const LoginScreen = () => {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -19,6 +20,11 @@ const Register = () => {
   const [signUp_stage, setSignUp_stage] = useState(0);
   const phoneInput = useRef(null);
   const navigation = useNavigation();
+  
+
+  
+
+  
 
   const handleSignIn = () => {
     // handle sign-up logic here
@@ -80,40 +86,7 @@ const Register = () => {
 
 
       
-      {/* <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
-      <Text style={styles.title_text}>Welcome Back!</Text>
-      </View>
-        
-        <View style={styles.texhtInpu_container}>
-        <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Email</Text></View>
-        <TextInput
-          style={styles.input}
-          placeholder="Email"
-          onChangeText={setEmail}
-          value={email}
-        />
-        </View>
-        
-        <View style={styles.texhtInpu_container}>
-        <View style={styles.textInput_label_container}><Text style={styles.textInput_labelText}>Password</Text></View>
-        <TextInput
-          style={styles.input}
-          placeholder="Password"
-          secureTextEntry
-          onChangeText={setPassword}
-          value={password}
-        />
-        </View>
-        
-        
       
-      <Primary_button text='Sign In'/>
-      <Text style={styles.or}>Or</Text>
-      
-      <View style={styles.social_login_container}>
-      <Social_Media_Login text='Continue with Google' mediaType='google' onPress={()=> console.log('google pressed')}/>
-      <Social_Media_Login text='Continue with Apple' mediaType='apple' onPress={()=> console.log('google pressed')}/>
-      </View> */}
       
       
         
@@ -128,7 +101,7 @@ const Register = () => {
   
 }
 
-export default Register
+export default LoginScreen
 
 const styles = StyleSheet.create({
 
