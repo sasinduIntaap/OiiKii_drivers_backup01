@@ -17,6 +17,8 @@ const AboutYou = ({text,onPress}) => {
     const [day,setDay] = useState('');
     const [month,setMonth] = useState('');
     const [year,setYear] = useState('');
+    const [gender,setGender] = useState('');
+    const [language,setLanguage] = useState('');
 
     //on date change function
 
@@ -62,6 +64,12 @@ const AboutYou = ({text,onPress}) => {
         
       });
     };
+
+    //set language function
+    const setLang = (lang) =>{
+      setLanguage(lang);
+      setLanguagePickerVisible(false);
+    }
     // Language picker Data
 
     const LanguageData = [
@@ -134,14 +142,14 @@ const AboutYou = ({text,onPress}) => {
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Gender</Text></View>
       <View style={styles.dateBtn_container}>
-      <TouchableOpacity style={styles.date_touchableOpacity}>
-        <Text>Male</Text>
+      <TouchableOpacity onPress={() => setGender('male')} style={[styles.gender_touchableOpacity,{borderWidth: gender == 'male' ? 1 : 0.8, borderColor: gender == 'male' ? '#F66F6F' : '#9D9D9D'}]}>
+        <Text style={{color: gender == 'male' ? '#F66F6F' : 'black'}}>Male</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.date_touchableOpacity}>
-        <Text>Female</Text>
+      <TouchableOpacity onPress={() => setGender('female')} style={[styles.gender_touchableOpacity,{borderWidth: gender == 'female' ? 1 : 0.8, borderColor: gender == 'female' ? '#F66F6F' : '#9D9D9D'}]}>
+        <Text style={{color: gender == 'female' ? '#F66F6F' : 'black'}}>Female</Text>
       </TouchableOpacity>
-      <TouchableOpacity style={styles.date_touchableOpacity}>
-        <Text>Prefer not to say</Text>
+      <TouchableOpacity onPress={() => setGender('prefernot')} style={[styles.gender_touchableOpacity,{borderWidth: gender == 'prefernot' ? 1 : 0.8, borderColor: gender == 'prefernot' ? '#F66F6F' : '#9D9D9D'}]}>
+        <Text style={{color: gender == 'prefernot' ? '#F66F6F' : 'black'}}>Prefer not to say</Text>
       </TouchableOpacity>
       </View>
       </View>
@@ -149,20 +157,20 @@ const AboutYou = ({text,onPress}) => {
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Nationality</Text></View>
       <TouchableOpacity style={{width:'100%'}} onPress={()=> setCountryModalOpen(true)}>
-      <CustomTextInput placeholder='Select your country' editable={false} icon = 'dropDown'/>
+      <CustomTextInput placeholder={country == null ? 'Select your country' : country} editable={false} icon = 'dropDown'/>
       </TouchableOpacity>
       </View>
       {/* language */}
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Preffered Language</Text></View>
       <TouchableOpacity style={{width:'100%'}} onPress={()=> setLanguagePickerVisible(true)}>
-      <CustomTextInput placeholder='Select languages' editable={false} icon = 'dropDown'/>
+      <CustomTextInput placeholder={language == '' ? 'Select Your Language' : language} editable={false} icon = 'dropDown'/>
       </TouchableOpacity>
       </View>
       {/* address */}
       <View style={{width:'100%', alignItems:'center'}}>
       <View style={{width:'100%',alignItems:'flex-start'}}><Text style={{fontWeight:'bold'}}>Current Address</Text></View>
-      <CustomTextInput placeholder='Last Name'/>
+      <CustomTextInput placeholder='Current Address'/>
       </View>
       
       </View>
@@ -176,7 +184,7 @@ const AboutYou = ({text,onPress}) => {
           onClose={()=> setCountryModalOpen(false)}
           modalProps={countryModalOpen}
           containerButtonStyle={{display:'none'}}
-          onSelect={(country) => setCountry(country)}
+          onSelect={(country) => setCountry(country.name)}
           
 
           />
@@ -188,7 +196,7 @@ const AboutYou = ({text,onPress}) => {
             <View>
             <FlatList 
                 data={LanguageData}
-                renderItem={(item) => <TouchableOpacity style={styles.language_container}><Text style={{color:'black', fontSize:20}}>{item.item.title}</Text></TouchableOpacity>}
+                renderItem={(item) => <TouchableOpacity onPress={() => setLang(item.item.title)} style={styles.language_container}><Text style={{color:'black', fontSize:20}}>{item.item.title}</Text></TouchableOpacity>}
                 keyExtractor={(item)=>item.title}
 
             />
@@ -258,6 +266,13 @@ const styles = StyleSheet.create({
            borderRadius:7,
 
         },
+    gender_touchableOpacity:{
+          borderWidth:0.8,
+           borderColor:'#9D9D9D',
+            padding:10,
+             borderRadius:7,
+  
+          },
     dateBtn_container:{
         flexDirection:'row',
          justifyContent:'space-between',
