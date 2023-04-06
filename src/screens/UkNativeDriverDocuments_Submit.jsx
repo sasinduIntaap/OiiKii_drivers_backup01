@@ -6,6 +6,7 @@ import Primary_button from "../components/Primary_button";
 import Building from "../assets/svg_icons/Building1.svg";
 import CustomTextInput from "../components/CustomTextInput";
 import ScanImageCont from "../components/ScanImageCont";
+import SignUpMainContainer from "../components/SignUp_stack/SignUpMainContainer";
 
 const options = [
   { label: "Passport", value: "Passport" },
@@ -23,9 +24,9 @@ const UkNativeDriverDocuments_Submit = () => {
   const boxShadowStyle = generateBoxShadowStyle( -2,4,"white",0.3,3,25,"grey");
 
   return (
-    <View style={styles.container}>
+    <SignUpMainContainer top='3%' padding={20}>
       <Building style={styles.buildingBack} />
-      <View style={[styles.card, boxShadowStyle]}>
+      <View>
         <ScrollView>
           <View>
             <Text style={styles.heading}>
@@ -100,7 +101,7 @@ const UkNativeDriverDocuments_Submit = () => {
           </View>
         </ScrollView>
       </View>
-    </View>
+    </SignUpMainContainer>
   );
 };
 
@@ -137,7 +138,7 @@ const styles = StyleSheet.create({
   buildingBack: {
     flex: 1,
     resizeMode: "cover",
-    bottom: -485,
+    // bottom: -485,
     left: -1,
   },
   heading: {

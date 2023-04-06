@@ -3,6 +3,7 @@ import React,{ useState,useRef,useEffect } from 'react'
 import Primary_button from '../Primary_button';
 import PhotoUpload from '../PhotoUpload';
 import SignUpContainer_elevated from './SignUpContainer_elevated';
+import SignUpMainContainer from './SignUpMainContainer';
 
 
 const windowWidth = Dimensions.get('window').width;
@@ -19,7 +20,7 @@ const ProfilePicture = ({text,onPress}) => {
     <>
       
       
-      <SignUpContainer_elevated top='3%' padding={20} illustration = 'pic'>
+      <SignUpMainContainer top='3%' padding={20} illustration='pic'>
       <View style={styles.title_container}>
       <Text style={styles.title}>Set up your profile Picture!</Text>
       </View>
@@ -31,9 +32,11 @@ const ProfilePicture = ({text,onPress}) => {
         
       </View>
       
+      <View style={{alignItems:'center'}}>
       <Primary_button text={text} onPress={onPress}/>
+      </View>
       
-      </SignUpContainer_elevated> 
+      </SignUpMainContainer> 
       
       
         
@@ -83,11 +86,13 @@ const styles = StyleSheet.create({
     // paddingBottom:'5%',
      justifyContent:'flex-start',
       width:'100%',
-       marginLeft: '5%'
+       marginLeft: '5%',
+       top:'7%'
   },
 middleBody_container:{
         
-         marginTop:10,
-          marginBottom:10
+         marginTop:80,
+          marginBottom:10,
+          
         }
 });

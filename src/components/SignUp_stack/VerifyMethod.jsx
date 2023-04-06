@@ -5,6 +5,7 @@ import PhoneIcon from '../../assets/svg_icons/phoneIcon.svg';
 import MailIcon from '../../assets/svg_icons/mailIcon.svg';
 import Buildings from '../../assets/svg_icons/building.svg';
 import SignUpContainer_elevated from './SignUpContainer_elevated';
+import SignUpMainContainer from './SignUpMainContainer';
 
 const {height, width} = Dimensions.get('window');
 const bk_image = {uri :'http://www.w3.org/2000/svg'};
@@ -21,12 +22,12 @@ const VerifyMethod = ({onPress}) => {
     <>
     
     
-    <SignUpContainer_elevated top='10%' padding={20} illustration='buildings' bottom='70%'>
+    <SignUpMainContainer top='3%' padding={20} illustration='buildings'>
     <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
     <Text style={styles.title}>Select your prefered verifying method</Text>
     </View>
     
-    <View style={{marginBottom:'10%'}}>
+    <View style={{marginBottom:'10%', alignItems:'center'}}>
       <TouchableOpacity style={{width:156,height:138, borderWidth:1, borderColor:'black', borderRadius:10, marginBottom:'5%'}}>
         <View style={{alignItems:'center', justifyContent:'center', flex:1}}>
         <PhoneIcon />
@@ -41,9 +42,11 @@ const VerifyMethod = ({onPress}) => {
       </TouchableOpacity>
     </View>
     
-    <Primary_button text='Next' onPress={onPress}/>
+    <View style={{alignItems:'center'}}>
+      <Primary_button text='Next' onPress={onPress}/>
+    </View>
     
-    </SignUpContainer_elevated> 
+    </SignUpMainContainer> 
     
 
     

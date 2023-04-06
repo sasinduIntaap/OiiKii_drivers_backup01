@@ -6,7 +6,7 @@ import Checkbox from 'expo-checkbox';
 import Social_Media_Login from '../Social_Media_Login';
 import Primary_button from '../Primary_button';
 import SignUpContainer_elevated from './SignUpContainer_elevated';
-
+import SignUpMainContainer from './SignUpMainContainer';
 
 const {height, width} = Dimensions.get('window');
 const bk_image = {uri :'http://www.w3.org/2000/svg'};
@@ -29,7 +29,7 @@ const CreateNewAccount = ({onPress}) => {
     
     
     {/* box shadow, elevated container begins */}
-    <SignUpContainer_elevated top='5%' illustration='buildings' bottom='70%'>
+    <SignUpMainContainer top='3%' padding={20}>
     <View style={{justifyContent:'flex-start', width:'100%', marginLeft: '5%', flexDirection:'row', marginTop:5, marginBottom:20 }}>
     <Text style={styles.title}>Create New Account</Text>
     </View>
@@ -88,7 +88,9 @@ const CreateNewAccount = ({onPress}) => {
       
     </View>
       
-    <Primary_button text='Sign Up' onPress={onPress}/>
+    <View style={{alignItems:'center'}}>
+      <Primary_button text='Sign Up' onPress={onPress}/>
+    </View>
 
     
     <View style={{width:'100%'}}>
@@ -97,7 +99,7 @@ const CreateNewAccount = ({onPress}) => {
     </View>
     
     
-    </SignUpContainer_elevated> 
+    </SignUpMainContainer> 
     {/* box shadow, elevated container ends */}
     
       
@@ -154,11 +156,13 @@ const styles = StyleSheet.create({
       
     },
     phoneNumberView: {
-      width: '90%',
+      width: '110%',
       height: 50,
       backgroundColor: 'white',
       marginBottom:'3%',
-      borderRadius:11
+      borderRadius:11,
+      borderWidth:1,
+      borderColor:'black'
     },
     checkBoxView:{
       width:'100%',

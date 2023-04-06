@@ -1,10 +1,10 @@
 import React,{useState} from 'react';
 import { TextInput, StyleSheet, View } from 'react-native';
 import DropDown from '../assets/svg_icons/icon _chevron_left_.svg';
-import CountryPicker from 'react-native-country-picker-modal'
+
 
 const CustomTextInput = (props) => {
-  const [countryModalOpen,setCountryModalOpen] = useState(false);
+  
   return (
     <>
     <View style={props.icon == 'dropDown' ? styles.iconContainer : styles.input}>

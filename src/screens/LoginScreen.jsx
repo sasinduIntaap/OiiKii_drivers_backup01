@@ -6,6 +6,7 @@ import {useNavigation} from '@react-navigation/native';
 import Social_Media_Login from '../components/Social_Media_Login';
 import Primary_button from '../components/Primary_button';
 import SignUpContainer_elevated from '../components/SignUp_stack/SignUpContainer_elevated';
+import SignUpMainContainer from '../components/SignUp_stack/SignUpMainContainer';
 
 
 
@@ -45,7 +46,7 @@ const LoginScreen = () => {
       <>
       
       
-      <SignUpContainer_elevated illustration='login' top='5%' padding={10}>
+      <SignUpMainContainer top='3%' padding={20} illustration='login'>
         
       <View style={{paddingBottom:'5%', justifyContent:'flex-start', width:'100%', marginLeft: '5%'}}>
       <Text style={styles.title_text}>Welcome Back!</Text>
@@ -74,15 +75,17 @@ const LoginScreen = () => {
         
         
       
+      <View style={{alignItems:'center'}}>
       <Primary_button text='Sign In'/>
       <Text style={styles.or}>Or</Text>
+      </View>
       
       <View style={styles.social_login_container}>
       <Social_Media_Login text='Continue with Google' mediaType='google' onPress={()=> console.log('google pressed')}/>
       <Social_Media_Login text='Continue with Apple' mediaType='apple' onPress={()=> console.log('google pressed')}/>
       </View>
       
-      </SignUpContainer_elevated> 
+      </SignUpMainContainer> 
 
 
       

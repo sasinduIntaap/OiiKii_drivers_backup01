@@ -16,9 +16,11 @@ const SignUpMainContainer = ({children,illustration,top,margin,marginTop,marginB
             <Buildings />
         </View>
         
-        <View style={[styles.bodyContainer,{top:top, margin:margin, marginTop:marginTop,marginBottom,bottom}]}>
+        <ScrollView style={[styles.bodyContainer,{top:top, margin:margin, marginTop:marginTop,marginBottom,bottom}]}>
+        <View>
         {children}
         </View>
+        </ScrollView>
         
     </SafeAreaView>
       
@@ -104,12 +106,14 @@ const SignUpMainContainer = ({children,illustration,top,margin,marginTop,marginB
             <>
     <SafeAreaView style={styles.container}> 
         <View>
-        {/* <BuildingWithDriver /> */}
+        {/* <Buildings /> */}
         </View>
         
-        <View style={styles.bodyContainer}>
+        <ScrollView style={styles.bodyContainer}>
+        <View>
         {children}
         </View>
+        </ScrollView>
         
     </SafeAreaView>
       

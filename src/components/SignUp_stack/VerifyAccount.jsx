@@ -6,6 +6,7 @@ import MailIcon from '../../assets/svg_icons/mailIcon.svg';
 import Otpillustration from '../../assets/svg_icons/OTPillustartion.svg';
 import OtpInput from '../OtpInput';
 import SignUpContainer_elevated from './SignUpContainer_elevated';
+import SignUpMainContainer from './SignUpMainContainer';
 
 
 const {height, width} = Dimensions.get('window');
@@ -21,7 +22,7 @@ const VerifyAccount = ({text,onPress}) => {
     
       <>
       {/* box shadow, elevated container begins */}
-      <SignUpContainer_elevated top='10%' padding={20} illustration='otp' bottom='70%'>
+      <SignUpMainContainer top='3%' padding={20} illustration='otp'>
       <View style={styles.title_container}>
       <Text style={styles.title}>Verify your Account</Text>
       </View>
@@ -32,9 +33,11 @@ const VerifyAccount = ({text,onPress}) => {
       <View style={styles.OtpInput_container}>
         <OtpInput />
       </View>
-      <Primary_button text={text} onPress={onPress}/>
+      <View style={{alignItems:'center'}}>
+        <Primary_button text={text} onPress={onPress}/>
+      </View>
       
-      </SignUpContainer_elevated> 
+      </SignUpMainContainer> 
       {/* box shadow, elevated container ends */}
       
         </>
@@ -63,7 +66,7 @@ const styles = StyleSheet.create({
 
         
       },
-      OtpInput_container:{marginTop:20},
+      OtpInput_container:{marginTop:40},
       info_text:{fontWeight:'400', fontSize:16},
       contact_txt:{fontWeight:'400', fontSize:16, color:'#F66F6F'},
       boxShadow: {
@@ -93,7 +96,7 @@ const styles = StyleSheet.create({
           },
           middleBody_container:{
             alignItems:'center',
-             marginTop:10,
+             marginTop:40,
               marginBottom:10
             }
 });
